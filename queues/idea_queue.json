@@ -1,0 +1,42 @@
+[
+  {
+    "id": "iea17018",
+    "project_id": "structural_entropy_timeseries",
+    "status": "new",
+    "priority": 5,
+    "title": "Structural entropy for neural time-series forecasting",
+    "hypothesis": "Integrate structural entropy into N-BEATS, N-BEATSx, and TimesNet to improve long-horizon forecasting.",
+    "metric": "MSE/MAE",
+    "created_at": "2026-05-25T17:05:48Z",
+    "updated_at": "2026-05-25T17:05:48Z",
+    "claimed_by": "",
+    "probe_specs": [],
+    "evidence": [],
+    "events": [
+      {
+        "at": "2026-05-25T17:05:48Z",
+        "event": "project_initialized"
+      }
+    ]
+  },
+  {
+    "id": "i419773b",
+    "project_id": "structural_entropy_timeseries",
+    "status": "new",
+    "priority": 6,
+    "title": "Structural entropy regularizer for N-BEATS blocks",
+    "hypothesis": "A structural entropy penalty over learned decomposition components may improve diversity and generalization across horizons.",
+    "metric": "MSE/MAE",
+    "created_at": "2026-05-25T17:05:48Z",
+    "updated_at": "2026-05-25T17:05:48Z",
+    "claimed_by": "",
+    "probe_specs": [],
+    "evidence": [],
+    "events": [
+      {
+        "at": "2026-05-25T17:05:48Z",
+        "event": "idea_created"
+      }
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+required:
+  - project_id
+  - title
+  - idea
+  - target
+  - benchmarks
+  - metrics
+
+fields:
+  project_id: "stable snake_case id"
+  title: "human-readable title"
+  status: "idea | deep_research | benchmark_build | probing | confirmation | writing | released | paused"
+  idea: "original high-level idea"
+  target:
+    claim: "what success would mean"
+    primary_metric: "metric name"
+    direction: "higher | lower"
+    target_value: "number or null"
+    confirmation_rule: "e.g. beats SOTA on all datasets with 3 seeds"
+  benchmarks:
+    datasets: []
+    tasks: []
+    baselines: []
+    official_repos: []
+  metrics:
+    primary: []
+    secondary: []
+    parsers: []
+  environment:
+    docker_image: ""
+    setup_script: ""
+    python: ""
+    cuda: ""
+  storage:
+    github_repo: ""
+    s3_prefix: ""
+    wandb_project: ""
+    hf_repo: ""
+  publication:
+    blog_dir: ""
+    paper_dir: ""
+    target_venue: ""
+

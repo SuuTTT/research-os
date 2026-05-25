@@ -1,0 +1,46 @@
+project_id: "structural_entropy_timeseries"
+title: "Structural entropy for neural time-series forecasting"
+status: idea
+idea: "Integrate structural entropy into N-BEATS, N-BEATSx, and TimesNet to improve long-horizon forecasting."
+
+target:
+  claim: "Beat strong reported baselines on ETT, Weather, Traffic, and Electricity under fair MSE/MAE evaluation."
+  primary_metric: ""
+  direction: lower
+  target_value:
+  confirmation_rule: ""
+
+benchmarks:
+  datasets: []
+  tasks: []
+  baselines: []
+  official_repos: []
+  reproduction_status: not_started
+
+metrics:
+  primary: []
+  secondary: []
+  parsers: []
+
+environment:
+  docker_image: ""
+  setup_script: ""
+  python: ""
+  cuda: ""
+
+storage:
+  github_repo: ""
+  s3_prefix: ""
+  wandb_project: ""
+  hf_repo: ""
+
+publication:
+  blog_dir: "research/structural_entropy_timeseries/blog"
+  paper_dir: "research/structural_entropy_timeseries/paper"
+  target_venue: ""
+
+current_state:
+  summary: ""
+  next_action: ""
+  blockers: []
+

@@ -1,0 +1,32 @@
+required:
+  - worker_id
+  - kind
+  - workspace
+  - runner
+
+fields:
+  worker_id: "stable id, e.g. local_cpu, vast_4090_01"
+  kind: "local | ssh | docker | slurm | kubernetes"
+  enabled: true
+  ssh:
+    host: ""
+    port: 22
+    user: root
+    key: ""
+  workspace: "/root/research-worker"
+  runner:
+    type: "bash | docker | python"
+    docker_image: ""
+  resources:
+    cpu: 0
+    gpu: 0
+    vram_gb: 0
+    disk_gb: 0
+  health:
+    heartbeat_command: "echo ok"
+    busy_command: "pgrep -af run_task || true"
+  artifact_paths:
+    logs: "runs/logs"
+    metrics: "runs/metrics"
+    checkpoints: "runs/checkpoints"
+

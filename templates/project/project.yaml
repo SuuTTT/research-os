@@ -1,0 +1,46 @@
+project_id: ""
+title: ""
+status: idea
+idea: ""
+
+target:
+  claim: ""
+  primary_metric: ""
+  direction: lower
+  target_value:
+  confirmation_rule: ""
+
+benchmarks:
+  datasets: []
+  tasks: []
+  baselines: []
+  official_repos: []
+  reproduction_status: not_started
+
+metrics:
+  primary: []
+  secondary: []
+  parsers: []
+
+environment:
+  docker_image: ""
+  setup_script: ""
+  python: ""
+  cuda: ""
+
+storage:
+  github_repo: ""
+  s3_prefix: ""
+  wandb_project: ""
+  hf_repo: ""
+
+publication:
+  blog_dir: ""
+  paper_dir: ""
+  target_venue: ""
+
+current_state:
+  summary: ""
+  next_action: ""
+  blockers: []
+

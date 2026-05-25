@@ -1,0 +1,30 @@
+[
+  {
+    "id": "bb06a921",
+    "project_id": "structural_entropy_timeseries",
+    "status": "pending",
+    "priority": 5,
+    "title": "Deep research and SOTA table for N-BEATS, N-BEATSx, TimesNet",
+    "repo_url": "",
+    "command": "",
+    "metric": "MSE/MAE",
+    "pass_rule": "SOTA table includes datasets, horizons, metrics, official repos, and fair comparison protocol",
+    "output_path": "research/structural_entropy_timeseries/benchmark/reproduction.md",
+    "created_at": "2026-05-25T17:05:48Z",
+    "updated_at": "2026-05-25T17:05:48Z"
+  },
+  {
+    "id": "be95a4ff",
+    "project_id": "structural_entropy_timeseries",
+    "status": "pending",
+    "priority": 6,
+    "title": "Clone and smoke-test TimesNet baseline",
+    "repo_url": "",
+    "command": "",
+    "metric": "MSE/MAE",
+    "pass_rule": "TimesNet trains/evaluates on one ETT split and emits parseable metrics",
+    "output_path": "research/structural_entropy_timeseries/benchmark/reproduction.md",
+    "created_at": "2026-05-25T17:05:48Z",
+    "updated_at": "2026-05-25T17:05:48Z"
+  }
+]

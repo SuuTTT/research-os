@@ -1,0 +1,21 @@
+workers:
+  - worker_id: local_cpu
+    kind: local
+    enabled: true
+    workspace: /root/research-os
+    runner:
+      type: bash
+      docker_image: ""
+    resources:
+      cpu: 1
+      gpu: 0
+      vram_gb: 0
+      disk_gb: 50
+    health:
+      heartbeat_command: "echo ok"
+      busy_command: "pgrep -af research_task || true"
+    artifact_paths:
+      logs: runs/logs
+      metrics: runs/metrics
+      checkpoints: runs/checkpoints
+

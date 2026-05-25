@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Runtime artifacts
+runs/
+logs/
+backups/
+*.log
+
+# Research artifacts too large for GitHub
+research/*/artifacts/
+research/*/benchmark/external/
+research/*/benchmark/data/
+research/*/benchmark/datasets/
+research/*/paper/figures/*.png
+research/*/paper/figures/*.pdf
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.safetensors
+
+# Tool outputs
+wandb/
+outputs/
+multirun/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/

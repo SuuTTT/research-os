@@ -1,0 +1,14 @@
+[
+  {
+    "id": "pub89d8cf4",
+    "project_id": "structural_entropy_timeseries",
+    "status": "pending",
+    "priority": 10,
+    "kind": "blog",
+    "trigger": "benchmark_built",
+    "source_evidence": [],
+    "output_path": "research/structural_entropy_timeseries/blog/benchmark-built.md",
+    "created_at": "2026-05-25T17:05:48Z",
+    "updated_at": "2026-05-25T17:05:48Z"
+  }
+]
