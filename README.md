@@ -42,3 +42,17 @@ Read the full build guide:
 docs/build_guide.md
 ```
 
+## Vast GPU Workers
+
+Research OS includes a Vast.ai hunter for disposable GPU workers:
+
+```bash
+python3 scripts/vast_hunter.py --storage 50 --max-dph 0.10 --min-dlperf-usd 200 --min-cuda 13.0
+```
+
+Read:
+
+```text
+docs/operations/vast_hardware_policy.md
+templates/project/hardware_requirements.md
+```
