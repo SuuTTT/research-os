@@ -12,6 +12,7 @@ global Vast worker policy for this specific research project.
 | Minimum CUDA reported by Vast | `>= 13.0` |
 | Minimum VRAM | `>= 8GB` |
 | Minimum disk | `>= 50GB` |
+| Minimum `pids.max` | `>= 512` or `max` |
 | Python | `>= 3.11`, prefer `3.12` |
 
 ## Project-Specific Needs
@@ -35,6 +36,7 @@ python - <<'PY'
 import jax
 print(jax.devices())
 PY
+cat /sys/fs/cgroup/pids.max 2>/dev/null || cat /sys/fs/cgroup/pids/pids.max 2>/dev/null || true
 ```
 
 Expected:

@@ -17,6 +17,7 @@ requirement:
 | Driver | `>= 580` | Avoid CUDA/JAX mismatch and old cuSPARSE issues. |
 | GPU RAM | `>= 8GB` | Smaller cards often fail eval bursts or large batches. |
 | Disk | `>= 50GB` | CUDA/JAX wheels plus repo/data/checkpoints make 20GB fragile. |
+| Process/thread cgroup | `pids.max >= 512` or `max` | JAX/XLA can abort during compile when thread creation is tightly capped. |
 | Reliability | `> 0.95` | Avoid churn during long probes. |
 | Direct ports | `>= 2` | Need SSH plus dashboard or service forwarding. |
 | DLPerf/$ | `> 200` | Basic cost-efficiency floor. |
@@ -25,7 +26,7 @@ requirement:
 Default hunter command:
 
 ```bash
-python3 scripts/vast_hunter.py --storage 50 --max-dph 0.10 --min-dlperf-usd 200 --min-cuda 13.0
+python3 scripts/vast_hunter.py --storage 50 --min-disk-space 50 --max-dph 0.10 --min-dlperf-usd 200 --min-cuda 13.0
 ```
 
 ## Setup-Stability Bar
@@ -37,12 +38,22 @@ A worker is rejected even if it passes DLPerf/$ when any of these happens:
 - `python -c 'import jax; print(jax.devices())'` does not show a CUDA device.
 - The environment cannot be installed without manual one-off fixes.
 - Available disk after dependency install is too small for logs/checkpoints.
+- The process/thread cgroup limit is below `512`.
+- Logs contain PJRT/XLA thread creation failures, especially
+  `Thread pjrt_async_work_runner creation via pthread_create() failed`.
+
+Process limit check:
+
+```bash
+ssh -p <port> root@<host> 'cat /sys/fs/cgroup/pids.max 2>/dev/null || cat /sys/fs/cgroup/pids/pids.max 2>/dev/null || true'
+```
 
 Known bad offer:
 
 | Offer / Contract | Reason |
 |---|---|
 | Offer `34624617`, contract `37907664`, `ssh4.vast.ai:27665` | Good CUDA13/DLPerf on paper, but SSH repeatedly timed out and rsync of a 21MB benchmark tree stalled/broke. |
+| Contract `37565664`, `ssh4.vast.ai:15665`, RTX 2060 12GB | Repeated PJRT pthread creation failures under `pids.max=256`; unsuitable for JAX queue workers. |
 
 ## Project-Specific Requirements
 
