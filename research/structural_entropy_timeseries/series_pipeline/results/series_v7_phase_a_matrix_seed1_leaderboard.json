@@ -1,0 +1,217 @@
+{
+  "project_id": "structural_entropy_timeseries",
+  "batch_prefix": "series_v7_phase_a_matrix_seed1",
+  "num_runs": 8,
+  "runs": [
+    {
+      "run_id": "r73624cd",
+      "probe_id": "series_v7_phase_a_matrix_seed1_dlinear_etth1_h96_s1",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh1",
+        "horizon": "96",
+        "mse": "0.41186609864234924",
+        "mae": "0.42583519220352173",
+        "stage": "train",
+        "seed": "1",
+        "sha": "4e938a1"
+      }
+    },
+    {
+      "run_id": "r0f50a2b",
+      "probe_id": "series_v7_phase_a_matrix_seed1_dlinear_etth1_h192_s1",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh1",
+        "horizon": "192",
+        "mse": "0.45746752619743347",
+        "mae": "0.4503460228443146",
+        "stage": "train",
+        "seed": "1",
+        "sha": "4e938a1"
+      }
+    },
+    {
+      "run_id": "rdff4e3d",
+      "probe_id": "series_v7_phase_a_matrix_seed1_dlinear_etth1_h336_s1",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh1",
+        "horizon": "336",
+        "mse": "0.4964744746685028",
+        "mae": "0.4725264608860016",
+        "stage": "train",
+        "seed": "1",
+        "sha": "4e938a1"
+      }
+    },
+    {
+      "run_id": "r666be30",
+      "probe_id": "series_v7_phase_a_matrix_seed1_dlinear_etth1_h720_s1",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh1",
+        "horizon": "720",
+        "mse": "0.5214351415634155",
+        "mae": "0.516507625579834",
+        "stage": "train",
+        "seed": "1",
+        "sha": "4e938a1"
+      }
+    },
+    {
+      "run_id": "rc298a82",
+      "probe_id": "series_v7_phase_a_matrix_seed1_dlinear_etth2_h96_s1",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh2",
+        "horizon": "96",
+        "mse": "0.3551676571369171",
+        "mae": "0.4053208529949188",
+        "stage": "train",
+        "seed": "1",
+        "sha": "4e938a1"
+      }
+    },
+    {
+      "run_id": "r8d37f5a",
+      "probe_id": "series_v7_phase_a_matrix_seed1_dlinear_etth2_h192_s1",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh2",
+        "horizon": "192",
+        "mse": "0.492082804441452",
+        "mae": "0.48827916383743286",
+        "stage": "train",
+        "seed": "1",
+        "sha": "4e938a1"
+      }
+    },
+    {
+      "run_id": "r2ddb7d8",
+      "probe_id": "series_v7_phase_a_matrix_seed1_dlinear_etth2_h336_s1",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh2",
+        "horizon": "336",
+        "mse": "0.6447278261184692",
+        "mae": "0.5683588981628418",
+        "stage": "train",
+        "seed": "1",
+        "sha": "4e938a1"
+      }
+    },
+    {
+      "run_id": "rd22076d",
+      "probe_id": "series_v7_phase_a_matrix_seed1_dlinear_etth2_h720_s1",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh2",
+        "horizon": "720",
+        "mse": "0.8366113901138306",
+        "mae": "0.6604508757591248",
+        "stage": "train",
+        "seed": "1",
+        "sha": "4e938a1"
+      }
+    }
+  ],
+  "leaderboard": [
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh2",
+      "horizon": "96",
+      "mse": 0.3551676571369171,
+      "mae": 0.4053208529949188,
+      "run_id": "rc298a82"
+    },
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh1",
+      "horizon": "96",
+      "mse": 0.41186609864234924,
+      "mae": 0.42583519220352173,
+      "run_id": "r73624cd"
+    },
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh1",
+      "horizon": "192",
+      "mse": 0.45746752619743347,
+      "mae": 0.4503460228443146,
+      "run_id": "r0f50a2b"
+    },
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh2",
+      "horizon": "192",
+      "mse": 0.492082804441452,
+      "mae": 0.48827916383743286,
+      "run_id": "r8d37f5a"
+    },
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh1",
+      "horizon": "336",
+      "mse": 0.4964744746685028,
+      "mae": 0.4725264608860016,
+      "run_id": "rdff4e3d"
+    },
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh1",
+      "horizon": "720",
+      "mse": 0.5214351415634155,
+      "mae": 0.516507625579834,
+      "run_id": "r666be30"
+    },
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh2",
+      "horizon": "336",
+      "mse": 0.6447278261184692,
+      "mae": 0.5683588981628418,
+      "run_id": "r2ddb7d8"
+    },
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh2",
+      "horizon": "720",
+      "mse": 0.8366113901138306,
+      "mae": 0.6604508757591248,
+      "run_id": "rd22076d"
+    }
+  ],
+  "best": {
+    "model": "dlinear_lb96",
+    "dataset": "ETTh2",
+    "horizon": "96",
+    "mse": 0.3551676571369171,
+    "mae": 0.4053208529949188,
+    "run_id": "rc298a82"
+  }
+}

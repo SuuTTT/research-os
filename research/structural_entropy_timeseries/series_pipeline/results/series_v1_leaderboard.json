@@ -1,0 +1,109 @@
+{
+  "project_id": "structural_entropy_timeseries",
+  "batch_prefix": "series_v1",
+  "num_runs": 4,
+  "runs": [
+    {
+      "run_id": "r84a0c02",
+      "probe_id": "series_v1_dlinear_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_baseline",
+        "dataset": "ETTh1",
+        "horizon": "96",
+        "mse": "0.420",
+        "mae": "0.510",
+        "stage": "smoke"
+      }
+    },
+    {
+      "run_id": "r3ad8540",
+      "probe_id": "series_v1_timesnet_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "timesnet_baseline",
+        "dataset": "ETTh1",
+        "horizon": "96",
+        "mse": "0.405",
+        "mae": "0.492",
+        "stage": "smoke"
+      }
+    },
+    {
+      "run_id": "r91c5687",
+      "probe_id": "series_v1_se_timesnet",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {
+        "model": "se_timesnet",
+        "dataset": "ETTh1",
+        "horizon": "96",
+        "mse": "0.389",
+        "mae": "0.481",
+        "stage": "smoke"
+      }
+    },
+    {
+      "run_id": "rc74e3c9",
+      "probe_id": "series_v1_se_nbeatsx",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "se_nbeatsx",
+        "dataset": "EPF",
+        "horizon": "24",
+        "mse": "0.377",
+        "mae": "0.469",
+        "stage": "smoke"
+      }
+    }
+  ],
+  "leaderboard": [
+    {
+      "model": "se_nbeatsx",
+      "dataset": "EPF",
+      "horizon": "24",
+      "mse": 0.377,
+      "mae": 0.469,
+      "run_id": "rc74e3c9"
+    },
+    {
+      "model": "se_timesnet",
+      "dataset": "ETTh1",
+      "horizon": "96",
+      "mse": 0.389,
+      "mae": 0.481,
+      "run_id": "r91c5687"
+    },
+    {
+      "model": "timesnet_baseline",
+      "dataset": "ETTh1",
+      "horizon": "96",
+      "mse": 0.405,
+      "mae": 0.492,
+      "run_id": "r3ad8540"
+    },
+    {
+      "model": "dlinear_baseline",
+      "dataset": "ETTh1",
+      "horizon": "96",
+      "mse": 0.42,
+      "mae": 0.51,
+      "run_id": "r84a0c02"
+    }
+  ],
+  "best": {
+    "model": "se_nbeatsx",
+    "dataset": "EPF",
+    "horizon": "24",
+    "mse": 0.377,
+    "mae": 0.469,
+    "run_id": "rc74e3c9"
+  }
+}

@@ -11,7 +11,7 @@ global Vast worker policy for this specific research project.
 | Minimum driver | `>= 580` |
 | Minimum CUDA reported by Vast | `>= 13.0` |
 | Minimum VRAM | `>= 8GB` |
-| Minimum disk | `>= 50GB` |
+| Minimum disk | `>= 32GB` |
 | Minimum `pids.max` | `>= 512` or `max` |
 | Python | `>= 3.11`, prefer `3.12` |
 

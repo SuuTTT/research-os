@@ -1,0 +1,33 @@
+{
+  "project_id": "structural_entropy_timeseries",
+  "batch_id": "series_v1",
+  "objective": "Establish reproducible baseline-vs-SE series testing loop",
+  "metric": "mse",
+  "direction": "lower",
+  "candidates": [
+    {
+      "probe_id": "series_v1_dlinear_baseline",
+      "worker_pool": "vastai",
+      "priority": 10,
+      "command": "python3 -c \"print('SERIES_METRIC model=dlinear_baseline dataset=ETTh1 horizon=96 mse=0.420 mae=0.510 stage=smoke')\""
+    },
+    {
+      "probe_id": "series_v1_timesnet_baseline",
+      "worker_pool": "vastai",
+      "priority": 11,
+      "command": "python3 -c \"print('SERIES_METRIC model=timesnet_baseline dataset=ETTh1 horizon=96 mse=0.405 mae=0.492 stage=smoke')\""
+    },
+    {
+      "probe_id": "series_v1_se_timesnet",
+      "worker_pool": "vastai",
+      "priority": 12,
+      "command": "python3 -c \"print('SERIES_METRIC model=se_timesnet dataset=ETTh1 horizon=96 mse=0.389 mae=0.481 stage=smoke')\""
+    },
+    {
+      "probe_id": "series_v1_se_nbeatsx",
+      "worker_pool": "vastai",
+      "priority": 13,
+      "command": "python3 -c \"print('SERIES_METRIC model=se_nbeatsx dataset=EPF horizon=24 mse=0.377 mae=0.469 stage=smoke')\""
+    }
+  ]
+}

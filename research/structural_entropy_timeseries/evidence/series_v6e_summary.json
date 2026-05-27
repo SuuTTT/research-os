@@ -1,0 +1,65 @@
+{
+  "project_id": "structural_entropy_timeseries",
+  "batch_prefix": "series_v6e",
+  "num_runs": 2,
+  "runs": [
+    {
+      "run_id": "ref75b92",
+      "probe_id": "series_v6e_dlinear_etth1_h96",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh1",
+        "horizon": "96",
+        "mse": "0.41186609864234924",
+        "mae": "0.42583519220352173",
+        "stage": "train",
+        "sha": "4e938a1"
+      }
+    },
+    {
+      "run_id": "r4c44769",
+      "probe_id": "series_v6e_dlinear_etth2_h96",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "dlinear_lb96",
+        "dataset": "ETTh2",
+        "horizon": "96",
+        "mse": "0.3551676571369171",
+        "mae": "0.4053208529949188",
+        "stage": "train",
+        "sha": "4e938a1"
+      }
+    }
+  ],
+  "leaderboard": [
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh2",
+      "horizon": "96",
+      "mse": 0.3551676571369171,
+      "mae": 0.4053208529949188,
+      "run_id": "r4c44769"
+    },
+    {
+      "model": "dlinear_lb96",
+      "dataset": "ETTh1",
+      "horizon": "96",
+      "mse": 0.41186609864234924,
+      "mae": 0.42583519220352173,
+      "run_id": "ref75b92"
+    }
+  ],
+  "best": {
+    "model": "dlinear_lb96",
+    "dataset": "ETTh2",
+    "horizon": "96",
+    "mse": 0.3551676571369171,
+    "mae": 0.4053208529949188,
+    "run_id": "r4c44769"
+  }
+}

@@ -19,6 +19,7 @@ Return:
 8. Minimal local benchmark build plan.
 9. Suggested first five probes.
 10. BibTeX entries.
+11. Critic in this area if any (like training data leak in time series forecasting; seed picking in RL; heterogeneous graph in graph learning etc.).
 
 Rules:
 - Separate reported facts from inference.

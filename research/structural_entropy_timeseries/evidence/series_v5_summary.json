@@ -1,0 +1,273 @@
+{
+  "project_id": "structural_entropy_timeseries",
+  "batch_prefix": "series_v5",
+  "num_runs": 16,
+  "runs": [
+    {
+      "run_id": "r656de3d",
+      "probe_id": "series_v5_seed1_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {}
+    },
+    {
+      "run_id": "rc3e9198",
+      "probe_id": "series_v5_seed1_se",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_mlp_se",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "0.062386",
+        "mae": "0.190593",
+        "stage": "train",
+        "seed": "1"
+      }
+    },
+    {
+      "run_id": "r4c67a3f",
+      "probe_id": "series_v5_seed2_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {}
+    },
+    {
+      "run_id": "ra2d2745",
+      "probe_id": "series_v5_seed2_se",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_mlp_se",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "0.048045",
+        "mae": "0.161877",
+        "stage": "train",
+        "seed": "2"
+      }
+    },
+    {
+      "run_id": "r8e0561e",
+      "probe_id": "series_v5_seed3_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {}
+    },
+    {
+      "run_id": "re9ac99f",
+      "probe_id": "series_v5_seed3_se",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_mlp_se",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "0.049864",
+        "mae": "0.166050",
+        "stage": "train",
+        "seed": "3"
+      }
+    },
+    {
+      "run_id": "rd42ddd4",
+      "probe_id": "series_v5_seed4_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {}
+    },
+    {
+      "run_id": "r89fc7f5",
+      "probe_id": "series_v5_seed4_se",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_mlp_se",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "0.057009",
+        "mae": "0.178711",
+        "stage": "train",
+        "seed": "4"
+      }
+    },
+    {
+      "run_id": "rb9612fc",
+      "probe_id": "series_v5_seed5_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {}
+    },
+    {
+      "run_id": "r395d89e",
+      "probe_id": "series_v5_seed5_se",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_mlp_se",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "0.047878",
+        "mae": "0.162089",
+        "stage": "train",
+        "seed": "5"
+      }
+    },
+    {
+      "run_id": "r84723c6",
+      "probe_id": "series_v5_seed6_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {}
+    },
+    {
+      "run_id": "r7213eb3",
+      "probe_id": "series_v5_seed6_se",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_mlp_se",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "0.049047",
+        "mae": "0.163859",
+        "stage": "train",
+        "seed": "6"
+      }
+    },
+    {
+      "run_id": "r619c3d7",
+      "probe_id": "series_v5_seed7_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {}
+    },
+    {
+      "run_id": "rb9fe095",
+      "probe_id": "series_v5_seed7_se",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_mlp_se",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "0.046292",
+        "mae": "0.157999",
+        "stage": "train",
+        "seed": "7"
+      }
+    },
+    {
+      "run_id": "r0a6c06b",
+      "probe_id": "series_v5_seed8_baseline",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {}
+    },
+    {
+      "run_id": "rfb4f9e9",
+      "probe_id": "series_v5_seed8_se",
+      "status": "done",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_mlp_se",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "0.051733",
+        "mae": "0.169163",
+        "stage": "train",
+        "seed": "8"
+      }
+    }
+  ],
+  "leaderboard": [
+    {
+      "model": "custom_mlp_se",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 0.046292,
+      "mae": 0.157999,
+      "run_id": "rb9fe095"
+    },
+    {
+      "model": "custom_mlp_se",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 0.047878,
+      "mae": 0.162089,
+      "run_id": "r395d89e"
+    },
+    {
+      "model": "custom_mlp_se",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 0.048045,
+      "mae": 0.161877,
+      "run_id": "ra2d2745"
+    },
+    {
+      "model": "custom_mlp_se",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 0.049047,
+      "mae": 0.163859,
+      "run_id": "r7213eb3"
+    },
+    {
+      "model": "custom_mlp_se",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 0.049864,
+      "mae": 0.16605,
+      "run_id": "re9ac99f"
+    },
+    {
+      "model": "custom_mlp_se",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 0.051733,
+      "mae": 0.169163,
+      "run_id": "rfb4f9e9"
+    },
+    {
+      "model": "custom_mlp_se",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 0.057009,
+      "mae": 0.178711,
+      "run_id": "r89fc7f5"
+    },
+    {
+      "model": "custom_mlp_se",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 0.062386,
+      "mae": 0.190593,
+      "run_id": "rc3e9198"
+    }
+  ],
+  "best": {
+    "model": "custom_mlp_se",
+    "dataset": "ETTh1",
+    "horizon": "24",
+    "mse": 0.046292,
+    "mae": 0.157999,
+    "run_id": "rb9fe095"
+  }
+}

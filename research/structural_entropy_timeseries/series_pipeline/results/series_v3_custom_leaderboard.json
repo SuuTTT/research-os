@@ -1,0 +1,57 @@
+{
+  "project_id": "structural_entropy_timeseries",
+  "batch_prefix": "series_v3_custom",
+  "num_runs": 3,
+  "runs": [
+    {
+      "run_id": "rcdc3ebb",
+      "probe_id": "series_v3_custom_bootstrap",
+      "status": "done",
+      "worker_id": "vastai_worker_1",
+      "exit_code": "0",
+      "metric": {
+        "model": "custom_bootstrap",
+        "dataset": "ETTh1",
+        "horizon": "24",
+        "mse": "9.990",
+        "mae": "9.990",
+        "stage": "bootstrap",
+        "torch": "2.7.1+cu118"
+      }
+    },
+    {
+      "run_id": "rae4aa73",
+      "probe_id": "series_v3_custom_baseline",
+      "status": "failed",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "1",
+      "metric": {}
+    },
+    {
+      "run_id": "r1aad562",
+      "probe_id": "series_v3_custom_se",
+      "status": "failed",
+      "worker_id": "vastai_worker_2",
+      "exit_code": "1",
+      "metric": {}
+    }
+  ],
+  "leaderboard": [
+    {
+      "model": "custom_bootstrap",
+      "dataset": "ETTh1",
+      "horizon": "24",
+      "mse": 9.99,
+      "mae": 9.99,
+      "run_id": "rcdc3ebb"
+    }
+  ],
+  "best": {
+    "model": "custom_bootstrap",
+    "dataset": "ETTh1",
+    "horizon": "24",
+    "mse": 9.99,
+    "mae": 9.99,
+    "run_id": "rcdc3ebb"
+  }
+}

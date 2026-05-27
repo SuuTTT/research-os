@@ -56,3 +56,39 @@ Read:
 docs/operations/vast_hardware_policy.md
 templates/project/hardware_requirements.md
 ```
+
+## Credentials And Smoke Tests
+
+Keep runtime credentials in a local file that is never committed:
+
+```bash
+cat > /home/ubuntu/.env.local <<'EOF'
+WANDB_API_KEY=...
+HF_TOKEN=...
+GITHUB_TOKEN=...
+VASTAI_API_KEY=...
+EOF
+chmod 600 /home/ubuntu/.env.local
+```
+
+Quick credential smoke tests:
+
+```bash
+python3 scripts/ros.py key-smoke --env-file /home/ubuntu/.env.local
+```
+
+## Worker Runtime Commands
+
+Research OS supports worker health checks and simple queue dispatch directly
+from `ros.py`:
+
+```bash
+python3 scripts/ros.py worker-status
+python3 scripts/ros.py setup-worker --worker-id vastai_worker_1
+python3 scripts/ros.py dispatch-runs --worker-pool vastai
+python3 scripts/ros.py check-runs
+```
+
+`setup-worker` synchronizes the control-plane `/home/ubuntu/.env.local` to
+worker `/root/.env.local`, and dispatched runs auto-load `/root/.env.local`
+before executing task commands.

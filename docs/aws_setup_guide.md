@@ -140,6 +140,51 @@ python3 scripts/ros.py status
 python3 scripts/ros.py list-ideas
 ```
 
+Install VastAI CLI (for GPU worker hunting/visibility):
+
+```bash
+pip3 install vastai --break-system-packages
+export PATH="$HOME/.local/bin:$PATH"
+vastai --version
+```
+
+## 6.1 Add Runtime Credentials
+
+Store runtime provider keys locally on the master:
+
+```bash
+cat > /home/ubuntu/.env.local <<'EOF'
+WANDB_API_KEY=...
+HF_TOKEN=...
+GITHUB_TOKEN=...
+VASTAI_API_KEY=...
+EOF
+chmod 600 /home/ubuntu/.env.local
+```
+
+Auto-load on login:
+
+```bash
+grep -q 'env.local' ~/.bashrc || cat >> ~/.bashrc <<'EOF'
+export PATH="$HOME/.local/bin:$PATH"
+set -a; source /home/ubuntu/.env.local; set +a
+EOF
+```
+
+Credential smoke tests:
+
+```bash
+source /home/ubuntu/.env.local
+vastai show instances
+curl -sS -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" https://api.github.com/user
+curl -sS -H "Authorization: Bearer $HF_TOKEN" https://huggingface.co/api/whoami-v2
+curl -sS -u "api:$WANDB_API_KEY" -H "Content-Type: application/json" \
+  -X POST https://api.wandb.ai/graphql \
+  --data '{"query":"query { viewer { username } }"}'
+```
+
+Never commit `.env.local` or API keys to Git.
+
 ## 7. SSH Key For Workers
 
 The master needs an SSH key for future workers.

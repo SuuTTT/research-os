@@ -116,6 +116,39 @@ Every run task must be reproducible from:
 
 Workers should be disposable. The master queue state is durable.
 
+## 3.1 Credentials And Env Policy
+
+Keep provider keys in a local file on the control plane:
+
+```bash
+cat > /home/ubuntu/.env.local <<'EOF'
+WANDB_API_KEY=...
+HF_TOKEN=...
+GITHUB_TOKEN=...
+VASTAI_API_KEY=...
+EOF
+chmod 600 /home/ubuntu/.env.local
+```
+
+Recommended shell bootstrap:
+
+```bash
+grep -q 'env.local' ~/.bashrc || cat >> ~/.bashrc <<'EOF'
+export PATH="$HOME/.local/bin:$PATH"
+set -a; source /home/ubuntu/.env.local; set +a
+EOF
+```
+
+Credential smoke tests (master):
+
+```bash
+python3 scripts/ros.py key-smoke --env-file /home/ubuntu/.env.local
+```
+
+Worker env behavior:
+- `python3 scripts/ros.py setup-worker --worker-id <id>` syncs `/home/ubuntu/.env.local` to worker `/root/.env.local`.
+- `python3 scripts/ros.py dispatch-runs` auto-loads worker `/root/.env.local` for each run.
+
 ## 4. New Research Flow
 
 ### Step A: Capture Idea
@@ -230,6 +263,14 @@ A run task is concrete:
 
 The run daemon claims a worker, launches the command, streams logs, parses
 metrics, and writes evidence.
+
+Operational loop:
+
+```bash
+python3 scripts/ros.py worker-status
+python3 scripts/ros.py dispatch-runs --worker-pool vastai
+python3 scripts/ros.py check-runs
+```
 
 ### Step F: Feedback Loop
 
