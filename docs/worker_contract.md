@@ -73,6 +73,34 @@ nvidia-smi --query-gpu=index,name,memory.used,memory.total,utilization.gpu --for
 
 If heartbeat fails, the worker is unavailable. Do not assign tasks.
 
+## Compute Routing Rules
+
+Always follow this routing table before queuing or running any task:
+
+| Task type | Where to run | Reason |
+|---|---|---|
+| Full dataset training (ETT, Weather, Traffic, ship-motion) | `vastai_worker_2` | Local has 2GB RAM — OOM guaranteed |
+| Model evaluation / rolling inference over full test set | `vastai_worker_2` | Same: large sliding-window arrays |
+| Hyperparameter sweeps (≥4 runs) | `vastai_worker_2` | Accumulate memory across runs |
+| GPU training (TimesNet, PatchTST, iTransformer, NBEATSx) | `vastai_worker_2` | Requires RTX 3060 VRAM |
+| Smoke tests on synthetic data (≤500 rows) | `local_cpu` | Fine, no GPU needed |
+| Code edits, file management, git operations | `local_cpu` | No compute required |
+| Graph construction / community detection on real data | `vastai_worker_2` | DTW + TMI on long series is RAM-heavy |
+
+**Hard rule**: do not run any script locally that loads a full benchmark CSV and
+trains or evaluates a model. The local machine is a t3.small (2GB RAM, no GPU).
+Exceeding ~1.5GB working set triggers the OOM killer (exit code 137) with no warning.
+
+To run on the worker:
+```bash
+SSH_WORKER="ssh -p 26249 root@ssh8.vast.ai -i ~/.ssh/vastai_id_ed25519"
+
+# rsync project then run
+rsync -az --exclude '__pycache__' /home/ubuntu/my-project/ \
+  root@ssh8.vast.ai:/root/my-project/ -e "ssh -p 26249 -i ~/.ssh/vastai_id_ed25519"
+$SSH_WORKER "cd /root/my-project && python3 -u run_experiments.py"
+```
+
 ## Crash Contract
 
 If a worker disappears:

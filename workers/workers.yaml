@@ -18,8 +18,7 @@ workers:
       logs: runs/logs
       metrics: runs/metrics
       checkpoints: runs/checkpoints
-
-  - worker_id: vastai_worker_1
+    notes: "t3.small, 2GB RAM, NO GPU. Light tasks only (smoke tests ≤500 rows, git, file ops). See docs/worker_contract.md for routing rules."
     kind: ssh
     enabled: false
     worker_pool: vastai
