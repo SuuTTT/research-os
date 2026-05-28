@@ -1,0 +1,1012 @@
+{
+  "project_id": "structural_entropy_timeseries",
+  "phase": "A",
+  "version": "v2",
+  "description": "Phase A baseline: DLinear and TimesNet on ETT benchmarks, seq_len=96, 3 seeds (1,2,3). TimesNet stats are mean\u00b1std across seeds; DLinear is deterministic (std=0).",
+  "protocol": {
+    "seq_len": 96,
+    "label_len": 48,
+    "features": "M",
+    "train_epochs": 10,
+    "patience": 3,
+    "batch_size": 32,
+    "git_sha": "4e938a1"
+  },
+  "note_dlinear": "DLinear has no stochastic initialization \u2014 all seeds produce identical results (std=0.0 exactly).",
+  "note_dlinear_ettm_gap": "DLinear ETTm MSE gap vs paper (+0.05\u2013+0.16) is by design: we fix seq_len=96 for all configs; the paper tunes lookback per config. Not a reproduction error.",
+  "generated_at": "2026-05-28T05:02:11.035629+00:00",
+  "results": [
+    {
+      "model": "dlinear",
+      "dataset": "ETTh1",
+      "horizon": 96,
+      "n_seeds": 3,
+      "mse_mean": 0.396158,
+      "mse_std": 0.0,
+      "mae_mean": 0.410841,
+      "mae_std": 0.0,
+      "paper_mse": 0.386,
+      "paper_mae": 0.4,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.396158,
+          "mae": 0.410841
+        },
+        "2": {
+          "mse": 0.396158,
+          "mae": 0.410841
+        },
+        "3": {
+          "mse": 0.396158,
+          "mae": 0.410841
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTh1",
+      "horizon": 192,
+      "n_seeds": 3,
+      "mse_mean": 0.445007,
+      "mse_std": 0.0,
+      "mae_mean": 0.440381,
+      "mae_std": 0.0,
+      "paper_mse": 0.437,
+      "paper_mae": 0.432,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.445007,
+          "mae": 0.440381
+        },
+        "2": {
+          "mse": 0.445007,
+          "mae": 0.440381
+        },
+        "3": {
+          "mse": 0.445007,
+          "mae": 0.440381
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTh1",
+      "horizon": 336,
+      "n_seeds": 3,
+      "mse_mean": 0.487411,
+      "mse_std": 0.0,
+      "mae_mean": 0.465404,
+      "mae_std": 0.0,
+      "paper_mse": 0.481,
+      "paper_mae": 0.459,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.487411,
+          "mae": 0.465404
+        },
+        "2": {
+          "mse": 0.487411,
+          "mae": 0.465404
+        },
+        "3": {
+          "mse": 0.487411,
+          "mae": 0.465404
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTh1",
+      "horizon": 720,
+      "n_seeds": 3,
+      "mse_mean": 0.512638,
+      "mse_std": 0.0,
+      "mae_mean": 0.510405,
+      "mae_std": 0.0,
+      "paper_mse": 0.519,
+      "paper_mae": 0.516,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.512638,
+          "mae": 0.510405
+        },
+        "2": {
+          "mse": 0.512638,
+          "mae": 0.510405
+        },
+        "3": {
+          "mse": 0.512638,
+          "mae": 0.510405
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTh2",
+      "horizon": 96,
+      "n_seeds": 3,
+      "mse_mean": 0.341447,
+      "mse_std": 0.0,
+      "mae_mean": 0.395293,
+      "mae_std": 0.0,
+      "paper_mse": 0.333,
+      "paper_mae": 0.387,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.341447,
+          "mae": 0.395293
+        },
+        "2": {
+          "mse": 0.341447,
+          "mae": 0.395293
+        },
+        "3": {
+          "mse": 0.341447,
+          "mae": 0.395293
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTh2",
+      "horizon": 192,
+      "n_seeds": 3,
+      "mse_mean": 0.481909,
+      "mse_std": 0.0,
+      "mae_mean": 0.479198,
+      "mae_std": 0.0,
+      "paper_mse": 0.477,
+      "paper_mae": 0.476,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.481909,
+          "mae": 0.479198
+        },
+        "2": {
+          "mse": 0.481909,
+          "mae": 0.479198
+        },
+        "3": {
+          "mse": 0.481909,
+          "mae": 0.479198
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTh2",
+      "horizon": 336,
+      "n_seeds": 3,
+      "mse_mean": 0.592931,
+      "mse_std": 0.0,
+      "mae_mean": 0.542171,
+      "mae_std": 0.0,
+      "paper_mse": 0.594,
+      "paper_mae": 0.541,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.592931,
+          "mae": 0.542171
+        },
+        "2": {
+          "mse": 0.592931,
+          "mae": 0.542171
+        },
+        "3": {
+          "mse": 0.592931,
+          "mae": 0.542171
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTh2",
+      "horizon": 720,
+      "n_seeds": 3,
+      "mse_mean": 0.840323,
+      "mse_std": 0.0,
+      "mae_mean": 0.661099,
+      "mae_std": 0.0,
+      "paper_mse": 0.831,
+      "paper_mae": 0.657,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.840323,
+          "mae": 0.661099
+        },
+        "2": {
+          "mse": 0.840323,
+          "mae": 0.661099
+        },
+        "3": {
+          "mse": 0.840323,
+          "mae": 0.661099
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTm1",
+      "horizon": 96,
+      "n_seeds": 3,
+      "mse_mean": 0.345947,
+      "mse_std": 0.0,
+      "mae_mean": 0.373709,
+      "mae_std": 0.0,
+      "paper_mse": 0.299,
+      "paper_mae": 0.343,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.345947,
+          "mae": 0.373709
+        },
+        "2": {
+          "mse": 0.345947,
+          "mae": 0.373709
+        },
+        "3": {
+          "mse": 0.345947,
+          "mae": 0.373709
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTm1",
+      "horizon": 192,
+      "n_seeds": 3,
+      "mse_mean": 0.381815,
+      "mse_std": 0.0,
+      "mae_mean": 0.391069,
+      "mae_std": 0.0,
+      "paper_mse": 0.335,
+      "paper_mae": 0.365,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.381815,
+          "mae": 0.391069
+        },
+        "2": {
+          "mse": 0.381815,
+          "mae": 0.391069
+        },
+        "3": {
+          "mse": 0.381815,
+          "mae": 0.391069
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTm1",
+      "horizon": 336,
+      "n_seeds": 3,
+      "mse_mean": 0.415267,
+      "mse_std": 0.0,
+      "mae_mean": 0.415027,
+      "mae_std": 0.0,
+      "paper_mse": 0.369,
+      "paper_mae": 0.386,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.415267,
+          "mae": 0.415027
+        },
+        "2": {
+          "mse": 0.415267,
+          "mae": 0.415027
+        },
+        "3": {
+          "mse": 0.415267,
+          "mae": 0.415027
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTm1",
+      "horizon": 720,
+      "n_seeds": 3,
+      "mse_mean": 0.472979,
+      "mse_std": 0.0,
+      "mae_mean": 0.45094,
+      "mae_std": 0.0,
+      "paper_mse": 0.425,
+      "paper_mae": 0.421,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.472979,
+          "mae": 0.45094
+        },
+        "2": {
+          "mse": 0.472979,
+          "mae": 0.45094
+        },
+        "3": {
+          "mse": 0.472979,
+          "mae": 0.45094
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTm2",
+      "horizon": 96,
+      "n_seeds": 3,
+      "mse_mean": 0.193428,
+      "mse_std": 0.0,
+      "mae_mean": 0.292817,
+      "mae_std": 0.0,
+      "paper_mse": 0.167,
+      "paper_mae": 0.26,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.193428,
+          "mae": 0.292817
+        },
+        "2": {
+          "mse": 0.193428,
+          "mae": 0.292817
+        },
+        "3": {
+          "mse": 0.193428,
+          "mae": 0.292817
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTm2",
+      "horizon": 192,
+      "n_seeds": 3,
+      "mse_mean": 0.284532,
+      "mse_std": 0.0,
+      "mae_mean": 0.361383,
+      "mae_std": 0.0,
+      "paper_mse": 0.224,
+      "paper_mae": 0.303,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.284532,
+          "mae": 0.361383
+        },
+        "2": {
+          "mse": 0.284532,
+          "mae": 0.361383
+        },
+        "3": {
+          "mse": 0.284532,
+          "mae": 0.361383
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTm2",
+      "horizon": 336,
+      "n_seeds": 3,
+      "mse_mean": 0.384927,
+      "mse_std": 0.0,
+      "mae_mean": 0.429467,
+      "mae_std": 0.0,
+      "paper_mse": 0.281,
+      "paper_mae": 0.342,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.384927,
+          "mae": 0.429467
+        },
+        "2": {
+          "mse": 0.384927,
+          "mae": 0.429467
+        },
+        "3": {
+          "mse": 0.384927,
+          "mae": 0.429467
+        }
+      }
+    },
+    {
+      "model": "dlinear",
+      "dataset": "ETTm2",
+      "horizon": 720,
+      "n_seeds": 3,
+      "mse_mean": 0.556104,
+      "mse_std": 0.0,
+      "mae_mean": 0.523487,
+      "mae_std": 0.0,
+      "paper_mse": 0.397,
+      "paper_mae": 0.421,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.556104,
+          "mae": 0.523487
+        },
+        "2": {
+          "mse": 0.556104,
+          "mae": 0.523487
+        },
+        "3": {
+          "mse": 0.556104,
+          "mae": 0.523487
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTh1",
+      "horizon": 96,
+      "n_seeds": 3,
+      "mse_mean": 0.389053,
+      "mse_std": 1.4e-05,
+      "mae_mean": 0.412007,
+      "mae_std": 9e-06,
+      "paper_mse": 0.384,
+      "paper_mae": 0.402,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.389057,
+          "mae": 0.412009
+        },
+        "2": {
+          "mse": 0.389065,
+          "mae": 0.412015
+        },
+        "3": {
+          "mse": 0.389037,
+          "mae": 0.411997
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTh1",
+      "horizon": 192,
+      "n_seeds": 3,
+      "mse_mean": 0.439411,
+      "mse_std": 1.7e-05,
+      "mae_mean": 0.441719,
+      "mae_std": 8e-06,
+      "paper_mse": 0.436,
+      "paper_mae": 0.429,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.439395,
+          "mae": 0.44171
+        },
+        "2": {
+          "mse": 0.439412,
+          "mae": 0.44172
+        },
+        "3": {
+          "mse": 0.439428,
+          "mae": 0.441727
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTh1",
+      "horizon": 336,
+      "n_seeds": 3,
+      "mse_mean": 0.494112,
+      "mse_std": 0.000402,
+      "mae_mean": 0.470866,
+      "mae_std": 0.000181,
+      "paper_mse": 0.491,
+      "paper_mae": 0.469,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.494571,
+          "mae": 0.471071
+        },
+        "2": {
+          "mse": 0.49382,
+          "mae": 0.470728
+        },
+        "3": {
+          "mse": 0.493946,
+          "mae": 0.470798
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTh1",
+      "horizon": 720,
+      "n_seeds": 3,
+      "mse_mean": 0.517802,
+      "mse_std": 0.001842,
+      "mae_mean": 0.494317,
+      "mae_std": 0.000931,
+      "paper_mse": 0.521,
+      "paper_mae": 0.5,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.51851,
+          "mae": 0.494433
+        },
+        "2": {
+          "mse": 0.519184,
+          "mae": 0.495184
+        },
+        "3": {
+          "mse": 0.515711,
+          "mae": 0.493334
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTh2",
+      "horizon": 96,
+      "n_seeds": 3,
+      "mse_mean": 0.329186,
+      "mse_std": 0.000137,
+      "mae_mean": 0.370057,
+      "mae_std": 0.000171,
+      "paper_mse": 0.34,
+      "paper_mae": 0.374,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.329116,
+          "mae": 0.370245
+        },
+        "2": {
+          "mse": 0.329097,
+          "mae": 0.369911
+        },
+        "3": {
+          "mse": 0.329344,
+          "mae": 0.370014
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTh2",
+      "horizon": 192,
+      "n_seeds": 3,
+      "mse_mean": 0.393026,
+      "mse_std": 0.001063,
+      "mae_mean": 0.408236,
+      "mae_std": 0.000764,
+      "paper_mse": 0.402,
+      "paper_mae": 0.414,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.392266,
+          "mae": 0.407745
+        },
+        "2": {
+          "mse": 0.394241,
+          "mae": 0.409116
+        },
+        "3": {
+          "mse": 0.392571,
+          "mae": 0.407847
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTh2",
+      "horizon": 336,
+      "n_seeds": 3,
+      "mse_mean": 0.470776,
+      "mse_std": 0.0,
+      "mae_mean": 0.467656,
+      "mae_std": 0.0,
+      "paper_mse": 0.452,
+      "paper_mae": 0.452,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.470776,
+          "mae": 0.467656
+        },
+        "2": {
+          "mse": 0.470776,
+          "mae": 0.467656
+        },
+        "3": {
+          "mse": 0.470776,
+          "mae": 0.467656
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTh2",
+      "horizon": 720,
+      "n_seeds": 3,
+      "mse_mean": 0.44184,
+      "mse_std": 0.000664,
+      "mae_mean": 0.452041,
+      "mae_std": 0.000259,
+      "paper_mse": 0.462,
+      "paper_mae": 0.468,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.441077,
+          "mae": 0.451767
+        },
+        "2": {
+          "mse": 0.442285,
+          "mae": 0.452073
+        },
+        "3": {
+          "mse": 0.442157,
+          "mae": 0.452282
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTm1",
+      "horizon": 96,
+      "n_seeds": 3,
+      "mse_mean": 0.336325,
+      "mse_std": 6e-06,
+      "mae_mean": 0.376504,
+      "mae_std": 7e-06,
+      "paper_mse": 0.338,
+      "paper_mae": 0.375,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.33633,
+          "mae": 0.376507
+        },
+        "2": {
+          "mse": 0.336318,
+          "mae": 0.376496
+        },
+        "3": {
+          "mse": 0.336326,
+          "mae": 0.376509
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTm1",
+      "horizon": 192,
+      "n_seeds": 3,
+      "mse_mean": 0.387381,
+      "mse_std": 0.000184,
+      "mae_mean": 0.401703,
+      "mae_std": 7.3e-05,
+      "paper_mse": 0.374,
+      "paper_mae": 0.387,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.38755,
+          "mae": 0.401784
+        },
+        "2": {
+          "mse": 0.387185,
+          "mae": 0.40164
+        },
+        "3": {
+          "mse": 0.387407,
+          "mae": 0.401686
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTm1",
+      "horizon": 336,
+      "n_seeds": 3,
+      "mse_mean": 0.416187,
+      "mse_std": 0.000873,
+      "mae_mean": 0.422814,
+      "mae_std": 0.000493,
+      "paper_mse": 0.41,
+      "paper_mae": 0.411,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.416792,
+          "mae": 0.423167
+        },
+        "2": {
+          "mse": 0.416583,
+          "mae": 0.423025
+        },
+        "3": {
+          "mse": 0.415187,
+          "mae": 0.422251
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTm1",
+      "horizon": 720,
+      "n_seeds": 3,
+      "mse_mean": 0.504054,
+      "mse_std": 0.020823,
+      "mae_mean": 0.468855,
+      "mae_std": 0.009022,
+      "paper_mse": 0.478,
+      "paper_mae": 0.45,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.514401,
+          "mae": 0.473417
+        },
+        "2": {
+          "mse": 0.517677,
+          "mae": 0.474685
+        },
+        "3": {
+          "mse": 0.480085,
+          "mae": 0.458464
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTm2",
+      "horizon": 96,
+      "n_seeds": 3,
+      "mse_mean": 0.18826,
+      "mse_std": 1e-06,
+      "mae_mean": 0.267808,
+      "mae_std": 1e-06,
+      "paper_mse": 0.187,
+      "paper_mae": 0.267,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.188261,
+          "mae": 0.267808
+        },
+        "2": {
+          "mse": 0.18826,
+          "mae": 0.267807
+        },
+        "3": {
+          "mse": 0.18826,
+          "mae": 0.267808
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTm2",
+      "horizon": 192,
+      "n_seeds": 3,
+      "mse_mean": 0.251821,
+      "mse_std": 0.000618,
+      "mae_mean": 0.306861,
+      "mae_std": 0.000346,
+      "paper_mse": 0.267,
+      "paper_mae": 0.332,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.252143,
+          "mae": 0.306947
+        },
+        "2": {
+          "mse": 0.251109,
+          "mae": 0.306481
+        },
+        "3": {
+          "mse": 0.252212,
+          "mae": 0.307156
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTm2",
+      "horizon": 336,
+      "n_seeds": 3,
+      "mse_mean": 0.312963,
+      "mse_std": 0.001015,
+      "mae_mean": 0.34367,
+      "mae_std": 0.000402,
+      "paper_mse": 0.332,
+      "paper_mae": 0.366,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.312112,
+          "mae": 0.343206
+        },
+        "2": {
+          "mse": 0.314086,
+          "mae": 0.343889
+        },
+        "3": {
+          "mse": 0.312691,
+          "mae": 0.343915
+        }
+      }
+    },
+    {
+      "model": "timesnet",
+      "dataset": "ETTm2",
+      "horizon": 720,
+      "n_seeds": 3,
+      "mse_mean": 0.422283,
+      "mse_std": 0.00029,
+      "mae_mean": 0.407028,
+      "mae_std": 0.000195,
+      "paper_mse": 0.432,
+      "paper_mae": 0.432,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "per_seed": {
+        "1": {
+          "mse": 0.422537,
+          "mae": 0.407076
+        },
+        "2": {
+          "mse": 0.422345,
+          "mae": 0.407194
+        },
+        "3": {
+          "mse": 0.421968,
+          "mae": 0.406813
+        }
+      }
+    }
+  ]
+}

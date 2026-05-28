@@ -73,30 +73,3 @@ workers:
       checkpoints: runs/checkpoints
     notes: "RTX 3060, instance 37906248, labeled aws, port may change on restart"
 
-  - worker_id: vastai_worker_3
-    kind: ssh
-    enabled: true
-    worker_pool: vastai
-    ssh:
-      host: ssh9.vast.ai
-      port: 35354
-      user: root
-      key: ~/.ssh/vastai_id_ed25519
-    workspace: /root/research-worker
-    runner:
-      type: bash
-      docker_image: ""
-    resources:
-      cpu: 10
-      gpu: 1
-      vram_gb: 22
-      disk_gb: 50
-    health:
-      heartbeat_command: "echo ok"
-      busy_command: "pgrep -f 'ros_.*\\.sh' 2>/dev/null || true"
-    artifact_paths:
-      logs: runs/logs
-      metrics: runs/metrics
-      checkpoints: runs/checkpoints
-    notes: "RTX 2080 Ti 22GB, instance 37995355, label phase_a_worker3, ssh9.vast.ai:35354"
-

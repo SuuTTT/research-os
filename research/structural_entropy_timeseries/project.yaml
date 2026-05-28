@@ -1,32 +1,61 @@
 project_id: "structural_entropy_timeseries"
-title: "Structural entropy for neural time-series forecasting"
-status: idea
-idea: "Integrate structural entropy into N-BEATS, N-BEATSx, and TimesNet to improve long-horizon forecasting."
+title: "Structural entropy as a model-agnostic regulariser for neural time-series forecasting"
+status: active
+idea: >
+  Add a structural entropy (SE) penalty to the training loss of sequence
+  forecasting models to force compressed internal representations, reducing
+  overfitting and improving generalisation. Test SE as a model-agnostic
+  regulariser across at least 3 backbone architectures (TimesNet, PatchTST,
+  iTransformer) and 6+ datasets.
 
 target:
-  claim: "Beat strong reported baselines on ETT, Weather, Traffic, and Electricity under fair MSE/MAE evaluation."
-  primary_metric: ""
+  claim: >
+    SE regularisation improves test MSE on ≥60% of (model, dataset, horizon)
+    configurations at λ>0 vs. λ=0, without degrading any configuration by
+    more than 2% relative MSE. The improvement is statistically significant
+    across 3 seeds.
+  primary_metric: "MSE (normalised, multivariate)"
   direction: lower
-  target_value:
-  confirmation_rule: ""
+  target_value: "≥60% of configs improved"
+  confirmation_rule: >
+    Phase B (SE) MSE < Phase A (no SE) MSE in ≥60% of
+    (model × dataset × horizon) pairs, at the best λ found via val set.
 
 benchmarks:
-  datasets: []
-  tasks: []
-  baselines: []
-  official_repos: []
-  reproduction_status: not_started
+  datasets:
+    - ETTh1
+    - ETTh2
+    - ETTm1
+    - ETTm2
+    - Weather
+    - Traffic
+    - Electricity
+  tasks:
+    - long_term_multivariate_forecasting
+  baselines:
+    - DLinear (deterministic, no SE benefit expected)
+    - TimesNet (Phase A complete, 3 seeds)
+    - PatchTST (Phase B target)
+    - iTransformer (Phase B target)
+  official_repos:
+    - https://github.com/thuml/Time-Series-Library  # commit 4e938a1 used in Phase A
+  reproduction_status: phase_a_complete
 
 metrics:
-  primary: []
-  secondary: []
-  parsers: []
+  primary:
+    - MSE (normalised)
+    - MAE (normalised)
+  secondary:
+    - MSE std across seeds
+    - Delta-MSE: (SE run - no-SE run) / no-SE run * 100
+  parsers:
+    - series_pipeline/scripts/collect_series_results.py
 
 environment:
   docker_image: ""
-  setup_script: ""
-  python: ""
-  cuda: ""
+  setup_script: "research/structural_entropy_timeseries/series_pipeline/scripts/generate_phase_a_matrix.py"
+  python: "3.10"
+  cuda: "11.8"
 
 storage:
   github_repo: ""
@@ -35,12 +64,24 @@ storage:
   hf_repo: ""
 
 publication:
-  blog_dir: "research/structural_entropy_timeseries/blog"
   paper_dir: "research/structural_entropy_timeseries/paper"
-  target_venue: ""
+  target_venue: "NeurIPS 2025 Time Series Workshop (first target) → ICLR 2026 (full paper)"
 
 current_state:
-  summary: ""
-  next_action: ""
-  blockers: []
+  summary: >
+    Phase A complete: DLinear and TimesNet reproduced on ETT×4, seeds 1-3.
+    TimesNet results within ±0.021 MSE of paper. DLinear fixed-L gap explained.
+    Aggregate evidence at evidence/series_v7_phase_a_v2_aggregate_summary.json.
+    Phase B design blocked pending deep research on 2024-25 SOTA protocol.
+  next_action: >
+    1. Run deep research (deep_research/request.md) to get SOTA table,
+       fair protocol, and Phase B design recommendation.
+    2. Expand datasets to Weather, Traffic, Electricity.
+    3. Implement SE penalty in TimesNet_SE.py (proof-of-concept).
+    4. Run Phase B sweep: λ ∈ {0, 0.01, 0.05, 0.1} × 16 TimesNet configs × 3 seeds.
+    5. If positive: extend to PatchTST and iTransformer.
+  blockers:
+    - Need deep research output to finalise Phase B protocol
+    - Worker disk management for expanded dataset suite (Weather 52MB, Traffic 87MB, Electricity 66MB)
+
 

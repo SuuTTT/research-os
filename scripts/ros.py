@@ -345,7 +345,7 @@ def _find_idle_worker(workers: list[dict], pool: str, busy_ids: set[str]) -> dic
             return w
         if w.get("kind") == "ssh":
             try:
-                _, rc = worker_ssh(w, w.get("health", {}).get("heartbeat_command", "echo ok"), timeout=5)
+                _, rc = worker_ssh(w, w.get("health", {}).get("heartbeat_command", "echo ok"), timeout=15)
                 if rc == 0:
                     return w
             except Exception:
@@ -385,18 +385,26 @@ def cmd_dispatch_runs(args):
             f"RET=$?\necho $RET > {pid_dir}/exit_code\nexit $RET\n"
         )
         enc = base64.b64encode(run_script.encode()).decode()
-        dispatch_cmd = (
+        setup_cmd = (
             f"mkdir -p {pid_dir} && "
             f"echo {enc} | base64 -d > /tmp/ros_{run['id']}.sh && "
-            f"chmod +x /tmp/ros_{run['id']}.sh && "
-            f"nohup /tmp/ros_{run['id']}.sh </dev/null > {log_path} 2>&1 & PID=$!; disown $PID; echo $PID"
+            f"chmod +x /tmp/ros_{run['id']}.sh"
         )
+        launch_cmd = f"setsid /tmp/ros_{run['id']}.sh </dev/null > {log_path} 2>&1 & echo $!"
         try:
             if w.get("kind") == "local":
-                r = subprocess.run(dispatch_cmd, shell=True, capture_output=True, text=True, timeout=40)
-                pid, rc = r.stdout.strip(), r.returncode
+                r = subprocess.run(setup_cmd, shell=True, capture_output=True, text=True, timeout=30)
+                if r.returncode != 0:
+                    print(f"{run['id']}: setup failed rc={r.returncode}")
+                    continue
+                r2 = subprocess.run(launch_cmd, shell=True, capture_output=True, text=True, timeout=15)
+                pid, rc = r2.stdout.strip(), r2.returncode
             else:
-                pid, rc = worker_ssh(w, dispatch_cmd, timeout=40)
+                _, setup_rc = worker_ssh(w, setup_cmd, timeout=30)
+                if setup_rc != 0:
+                    print(f"{run['id']}: setup failed rc={setup_rc}")
+                    continue
+                pid, rc = worker_ssh(w, launch_cmd, timeout=15)
             if rc != 0:
                 print(f"{run['id']}: dispatch failed rc={rc}")
                 continue
