@@ -9,16 +9,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh1",
-        "horizon": "96",
-        "mse": "0.3961581289768219",
-        "mae": "0.4108412563800812",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r58f79da",
@@ -26,16 +17,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh1",
-        "horizon": "192",
-        "mse": "0.4450070559978485",
-        "mae": "0.4403814971446991",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rc8210dd",
@@ -43,16 +25,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh1",
-        "horizon": "336",
-        "mse": "0.48741069436073303",
-        "mae": "0.46540388464927673",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r76b0cfc",
@@ -60,16 +33,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh1",
-        "horizon": "720",
-        "mse": "0.5126377940177917",
-        "mae": "0.5104051232337952",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r0add015",
@@ -77,16 +41,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh2",
-        "horizon": "96",
-        "mse": "0.3414474129676819",
-        "mae": "0.3952932059764862",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r82122f6",
@@ -94,16 +49,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh2",
-        "horizon": "192",
-        "mse": "0.4819091558456421",
-        "mae": "0.4791976511478424",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r0ffe591",
@@ -111,16 +57,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh2",
-        "horizon": "336",
-        "mse": "0.59293133020401",
-        "mae": "0.5421714782714844",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "ref4527e",
@@ -128,16 +65,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh2",
-        "horizon": "720",
-        "mse": "0.8403232097625732",
-        "mae": "0.661099374294281",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "ra08b8e8",
@@ -145,16 +73,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm1",
-        "horizon": "96",
-        "mse": "0.34594660997390747",
-        "mae": "0.3737088739871979",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r7a868d7",
@@ -162,16 +81,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm1",
-        "horizon": "192",
-        "mse": "0.38181474804878235",
-        "mae": "0.39106860756874084",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rca6800e",
@@ -179,16 +89,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm1",
-        "horizon": "336",
-        "mse": "0.4152672588825226",
-        "mae": "0.4150267541408539",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rd0dd997",
@@ -196,16 +97,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm1",
-        "horizon": "720",
-        "mse": "0.4729785919189453",
-        "mae": "0.4509398639202118",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r17d3f52",
@@ -213,16 +105,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm2",
-        "horizon": "96",
-        "mse": "0.19342845678329468",
-        "mae": "0.2928171455860138",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "re25cd79",
@@ -230,16 +113,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm2",
-        "horizon": "192",
-        "mse": "0.28453242778778076",
-        "mae": "0.36138325929641724",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "re696c38",
@@ -247,16 +121,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm2",
-        "horizon": "336",
-        "mse": "0.38492700457572937",
-        "mae": "0.4294673502445221",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r2846a8f",
@@ -264,16 +129,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm2",
-        "horizon": "720",
-        "mse": "0.5561041831970215",
-        "mae": "0.5234867334365845",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r7f5fd79",
@@ -281,16 +137,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh1",
-        "horizon": "96",
-        "mse": "0.389065146446228",
-        "mae": "0.4120146334171295",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rc91a05c",
@@ -298,16 +145,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh1",
-        "horizon": "192",
-        "mse": "0.4394117295742035",
-        "mae": "0.44172048568725586",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r6d269b7",
@@ -315,16 +153,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh1",
-        "horizon": "336",
-        "mse": "0.49382007122039795",
-        "mae": "0.4707280993461609",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "re7fcfdd",
@@ -332,16 +161,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh1",
-        "horizon": "720",
-        "mse": "0.5191843509674072",
-        "mae": "0.4951842427253723",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r9fc7f46",
@@ -349,16 +169,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh2",
-        "horizon": "96",
-        "mse": "0.32909730076789856",
-        "mae": "0.36991143226623535",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r34d5720",
@@ -366,16 +177,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh2",
-        "horizon": "192",
-        "mse": "0.3942413032054901",
-        "mae": "0.409116268157959",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "ra1d7f66",
@@ -383,16 +185,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh2",
-        "horizon": "336",
-        "mse": "0.47077637910842896",
-        "mae": "0.4676562249660492",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r7eb11af",
@@ -400,16 +193,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh2",
-        "horizon": "720",
-        "mse": "0.4422849118709564",
-        "mae": "0.4520726799964905",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rb6ff1d1",
@@ -417,16 +201,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm1",
-        "horizon": "96",
-        "mse": "0.3363177478313446",
-        "mae": "0.3764963448047638",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r6ddc428",
@@ -434,16 +209,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm1",
-        "horizon": "192",
-        "mse": "0.3871854245662689",
-        "mae": "0.4016400873661041",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r9cd0afa",
@@ -451,16 +217,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm1",
-        "horizon": "336",
-        "mse": "0.41658324003219604",
-        "mae": "0.423024982213974",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r8477592",
@@ -468,16 +225,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm1",
-        "horizon": "720",
-        "mse": "0.5176766514778137",
-        "mae": "0.47468483448028564",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r1ca9a32",
@@ -485,16 +233,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm2",
-        "horizon": "96",
-        "mse": "0.18825967609882355",
-        "mae": "0.26780688762664795",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r28bf7a8",
@@ -502,16 +241,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm2",
-        "horizon": "192",
-        "mse": "0.25110873579978943",
-        "mae": "0.3064810335636139",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r6ebdaef",
@@ -519,16 +249,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm2",
-        "horizon": "336",
-        "mse": "0.3140859603881836",
-        "mae": "0.3438894748687744",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r86b0f30",
@@ -536,16 +257,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm2",
-        "horizon": "720",
-        "mse": "0.4223448932170868",
-        "mae": "0.40719369053840637",
-        "stage": "train",
-        "seed": "2",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "ra4a1e51",
@@ -553,16 +265,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh1",
-        "horizon": "96",
-        "mse": "0.3961581289768219",
-        "mae": "0.4108412563800812",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r12ea5bf",
@@ -570,16 +273,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh1",
-        "horizon": "192",
-        "mse": "0.4450070559978485",
-        "mae": "0.4403814971446991",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "re6d2c44",
@@ -587,16 +281,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh1",
-        "horizon": "336",
-        "mse": "0.48741069436073303",
-        "mae": "0.46540388464927673",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rf6eda55",
@@ -604,16 +289,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh1",
-        "horizon": "720",
-        "mse": "0.5126377940177917",
-        "mae": "0.5104051232337952",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r074cba3",
@@ -621,16 +297,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh2",
-        "horizon": "96",
-        "mse": "0.3414474129676819",
-        "mae": "0.3952932059764862",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r4e20c9a",
@@ -638,16 +305,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh2",
-        "horizon": "192",
-        "mse": "0.4819091558456421",
-        "mae": "0.4791976511478424",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r59a70d6",
@@ -655,16 +313,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh2",
-        "horizon": "336",
-        "mse": "0.59293133020401",
-        "mae": "0.5421714782714844",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r37a1290",
@@ -672,16 +321,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTh2",
-        "horizon": "720",
-        "mse": "0.8403232097625732",
-        "mae": "0.661099374294281",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rf74f449",
@@ -689,16 +329,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm1",
-        "horizon": "96",
-        "mse": "0.34594660997390747",
-        "mae": "0.3737088739871979",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r87de9ca",
@@ -706,16 +337,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm1",
-        "horizon": "192",
-        "mse": "0.38181474804878235",
-        "mae": "0.39106860756874084",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rc56e146",
@@ -723,16 +345,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm1",
-        "horizon": "336",
-        "mse": "0.4152672588825226",
-        "mae": "0.4150267541408539",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r8303f0d",
@@ -740,16 +353,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm1",
-        "horizon": "720",
-        "mse": "0.4729785919189453",
-        "mae": "0.4509398639202118",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rfedb5f9",
@@ -757,16 +361,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm2",
-        "horizon": "96",
-        "mse": "0.19342845678329468",
-        "mae": "0.2928171455860138",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r83b040c",
@@ -774,16 +369,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm2",
-        "horizon": "192",
-        "mse": "0.28453242778778076",
-        "mae": "0.36138325929641724",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r7a5f05d",
@@ -791,16 +377,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm2",
-        "horizon": "336",
-        "mse": "0.38492700457572937",
-        "mae": "0.4294673502445221",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rc6ae24d",
@@ -808,16 +385,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "dlinear_lb96",
-        "dataset": "ETTm2",
-        "horizon": "720",
-        "mse": "0.5561041831970215",
-        "mae": "0.5234867334365845",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r2cd92a6",
@@ -825,16 +393,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh1",
-        "horizon": "96",
-        "mse": "0.3890370726585388",
-        "mae": "0.4119965434074402",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r0796992",
@@ -842,16 +401,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh1",
-        "horizon": "192",
-        "mse": "0.43942791223526",
-        "mae": "0.44172677397727966",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rd98c437",
@@ -859,16 +409,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh1",
-        "horizon": "336",
-        "mse": "0.49394604563713074",
-        "mae": "0.4707977771759033",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r59feb4a",
@@ -876,16 +417,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh1",
-        "horizon": "720",
-        "mse": "0.5157109498977661",
-        "mae": "0.49333393573760986",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r7db077e",
@@ -893,16 +425,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh2",
-        "horizon": "96",
-        "mse": "0.3293440043926239",
-        "mae": "0.3700138330459595",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rab2c8b2",
@@ -910,16 +433,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh2",
-        "horizon": "192",
-        "mse": "0.3925711512565613",
-        "mae": "0.4078468680381775",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r50629f5",
@@ -927,16 +441,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh2",
-        "horizon": "336",
-        "mse": "0.4707758128643036",
-        "mae": "0.4676559567451477",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "red93656",
@@ -944,16 +449,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTh2",
-        "horizon": "720",
-        "mse": "0.4421570599079132",
-        "mae": "0.4522824287414551",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rcfb97b6",
@@ -961,16 +457,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm1",
-        "horizon": "96",
-        "mse": "0.3363262712955475",
-        "mae": "0.3765093684196472",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r36be551",
@@ -978,16 +465,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm1",
-        "horizon": "192",
-        "mse": "0.38740745186805725",
-        "mae": "0.401685506105423",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r74805d5",
@@ -995,16 +473,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm1",
-        "horizon": "336",
-        "mse": "0.4151867628097534",
-        "mae": "0.42225149273872375",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r71f1b79",
@@ -1012,16 +481,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm1",
-        "horizon": "720",
-        "mse": "0.48008477687835693",
-        "mae": "0.45846378803253174",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "ra2ca921",
@@ -1029,16 +489,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm2",
-        "horizon": "96",
-        "mse": "0.18826034665107727",
-        "mae": "0.2678075134754181",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r13d2d47",
@@ -1046,16 +497,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm2",
-        "horizon": "192",
-        "mse": "0.25221219658851624",
-        "mae": "0.30715638399124146",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "r94263c2",
@@ -1063,16 +505,7 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm2",
-        "horizon": "336",
-        "mse": "0.31269052624702454",
-        "mae": "0.34391453862190247",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     },
     {
       "run_id": "rec2a323",
@@ -1080,538 +513,9 @@
       "status": "done",
       "worker_id": "vastai_worker_2",
       "exit_code": "0",
-      "metric": {
-        "model": "timesnet_lb96",
-        "dataset": "ETTm2",
-        "horizon": "720",
-        "mse": "0.42196768522262573",
-        "mae": "0.4068134129047394",
-        "stage": "train",
-        "seed": "3",
-        "sha": "4e938a1"
-      }
+      "metric": {}
     }
   ],
-  "leaderboard": [
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm2",
-      "horizon": "96",
-      "mse": 0.18825967609882355,
-      "mae": 0.26780688762664795,
-      "run_id": "r1ca9a32"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm2",
-      "horizon": "96",
-      "mse": 0.18826034665107727,
-      "mae": 0.2678075134754181,
-      "run_id": "ra2ca921"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm2",
-      "horizon": "96",
-      "mse": 0.19342845678329468,
-      "mae": 0.2928171455860138,
-      "run_id": "r17d3f52"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm2",
-      "horizon": "96",
-      "mse": 0.19342845678329468,
-      "mae": 0.2928171455860138,
-      "run_id": "rfedb5f9"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm2",
-      "horizon": "192",
-      "mse": 0.25110873579978943,
-      "mae": 0.3064810335636139,
-      "run_id": "r28bf7a8"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm2",
-      "horizon": "192",
-      "mse": 0.25221219658851624,
-      "mae": 0.30715638399124146,
-      "run_id": "r13d2d47"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm2",
-      "horizon": "192",
-      "mse": 0.28453242778778076,
-      "mae": 0.36138325929641724,
-      "run_id": "re25cd79"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm2",
-      "horizon": "192",
-      "mse": 0.28453242778778076,
-      "mae": 0.36138325929641724,
-      "run_id": "r83b040c"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm2",
-      "horizon": "336",
-      "mse": 0.31269052624702454,
-      "mae": 0.34391453862190247,
-      "run_id": "r94263c2"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm2",
-      "horizon": "336",
-      "mse": 0.3140859603881836,
-      "mae": 0.3438894748687744,
-      "run_id": "r6ebdaef"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh2",
-      "horizon": "96",
-      "mse": 0.32909730076789856,
-      "mae": 0.36991143226623535,
-      "run_id": "r9fc7f46"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh2",
-      "horizon": "96",
-      "mse": 0.3293440043926239,
-      "mae": 0.3700138330459595,
-      "run_id": "r7db077e"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm1",
-      "horizon": "96",
-      "mse": 0.3363177478313446,
-      "mae": 0.3764963448047638,
-      "run_id": "rb6ff1d1"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm1",
-      "horizon": "96",
-      "mse": 0.3363262712955475,
-      "mae": 0.3765093684196472,
-      "run_id": "rcfb97b6"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh2",
-      "horizon": "96",
-      "mse": 0.3414474129676819,
-      "mae": 0.3952932059764862,
-      "run_id": "r0add015"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh2",
-      "horizon": "96",
-      "mse": 0.3414474129676819,
-      "mae": 0.3952932059764862,
-      "run_id": "r074cba3"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm1",
-      "horizon": "96",
-      "mse": 0.34594660997390747,
-      "mae": 0.3737088739871979,
-      "run_id": "ra08b8e8"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm1",
-      "horizon": "96",
-      "mse": 0.34594660997390747,
-      "mae": 0.3737088739871979,
-      "run_id": "rf74f449"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm1",
-      "horizon": "192",
-      "mse": 0.38181474804878235,
-      "mae": 0.39106860756874084,
-      "run_id": "r7a868d7"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm1",
-      "horizon": "192",
-      "mse": 0.38181474804878235,
-      "mae": 0.39106860756874084,
-      "run_id": "r87de9ca"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm2",
-      "horizon": "336",
-      "mse": 0.38492700457572937,
-      "mae": 0.4294673502445221,
-      "run_id": "re696c38"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm2",
-      "horizon": "336",
-      "mse": 0.38492700457572937,
-      "mae": 0.4294673502445221,
-      "run_id": "r7a5f05d"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm1",
-      "horizon": "192",
-      "mse": 0.3871854245662689,
-      "mae": 0.4016400873661041,
-      "run_id": "r6ddc428"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm1",
-      "horizon": "192",
-      "mse": 0.38740745186805725,
-      "mae": 0.401685506105423,
-      "run_id": "r36be551"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh1",
-      "horizon": "96",
-      "mse": 0.3890370726585388,
-      "mae": 0.4119965434074402,
-      "run_id": "r2cd92a6"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh1",
-      "horizon": "96",
-      "mse": 0.389065146446228,
-      "mae": 0.4120146334171295,
-      "run_id": "r7f5fd79"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh2",
-      "horizon": "192",
-      "mse": 0.3925711512565613,
-      "mae": 0.4078468680381775,
-      "run_id": "rab2c8b2"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh2",
-      "horizon": "192",
-      "mse": 0.3942413032054901,
-      "mae": 0.409116268157959,
-      "run_id": "r34d5720"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh1",
-      "horizon": "96",
-      "mse": 0.3961581289768219,
-      "mae": 0.4108412563800812,
-      "run_id": "rdd92c9a"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh1",
-      "horizon": "96",
-      "mse": 0.3961581289768219,
-      "mae": 0.4108412563800812,
-      "run_id": "ra4a1e51"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm1",
-      "horizon": "336",
-      "mse": 0.4151867628097534,
-      "mae": 0.42225149273872375,
-      "run_id": "r74805d5"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm1",
-      "horizon": "336",
-      "mse": 0.4152672588825226,
-      "mae": 0.4150267541408539,
-      "run_id": "rca6800e"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm1",
-      "horizon": "336",
-      "mse": 0.4152672588825226,
-      "mae": 0.4150267541408539,
-      "run_id": "rc56e146"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm1",
-      "horizon": "336",
-      "mse": 0.41658324003219604,
-      "mae": 0.423024982213974,
-      "run_id": "r9cd0afa"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm2",
-      "horizon": "720",
-      "mse": 0.42196768522262573,
-      "mae": 0.4068134129047394,
-      "run_id": "rec2a323"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm2",
-      "horizon": "720",
-      "mse": 0.4223448932170868,
-      "mae": 0.40719369053840637,
-      "run_id": "r86b0f30"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh1",
-      "horizon": "192",
-      "mse": 0.4394117295742035,
-      "mae": 0.44172048568725586,
-      "run_id": "rc91a05c"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh1",
-      "horizon": "192",
-      "mse": 0.43942791223526,
-      "mae": 0.44172677397727966,
-      "run_id": "r0796992"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh2",
-      "horizon": "720",
-      "mse": 0.4421570599079132,
-      "mae": 0.4522824287414551,
-      "run_id": "red93656"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh2",
-      "horizon": "720",
-      "mse": 0.4422849118709564,
-      "mae": 0.4520726799964905,
-      "run_id": "r7eb11af"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh1",
-      "horizon": "192",
-      "mse": 0.4450070559978485,
-      "mae": 0.4403814971446991,
-      "run_id": "r58f79da"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh1",
-      "horizon": "192",
-      "mse": 0.4450070559978485,
-      "mae": 0.4403814971446991,
-      "run_id": "r12ea5bf"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh2",
-      "horizon": "336",
-      "mse": 0.4707758128643036,
-      "mae": 0.4676559567451477,
-      "run_id": "r50629f5"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh2",
-      "horizon": "336",
-      "mse": 0.47077637910842896,
-      "mae": 0.4676562249660492,
-      "run_id": "ra1d7f66"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm1",
-      "horizon": "720",
-      "mse": 0.4729785919189453,
-      "mae": 0.4509398639202118,
-      "run_id": "rd0dd997"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm1",
-      "horizon": "720",
-      "mse": 0.4729785919189453,
-      "mae": 0.4509398639202118,
-      "run_id": "r8303f0d"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm1",
-      "horizon": "720",
-      "mse": 0.48008477687835693,
-      "mae": 0.45846378803253174,
-      "run_id": "r71f1b79"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh2",
-      "horizon": "192",
-      "mse": 0.4819091558456421,
-      "mae": 0.4791976511478424,
-      "run_id": "r82122f6"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh2",
-      "horizon": "192",
-      "mse": 0.4819091558456421,
-      "mae": 0.4791976511478424,
-      "run_id": "r4e20c9a"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh1",
-      "horizon": "336",
-      "mse": 0.48741069436073303,
-      "mae": 0.46540388464927673,
-      "run_id": "rc8210dd"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh1",
-      "horizon": "336",
-      "mse": 0.48741069436073303,
-      "mae": 0.46540388464927673,
-      "run_id": "re6d2c44"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh1",
-      "horizon": "336",
-      "mse": 0.49382007122039795,
-      "mae": 0.4707280993461609,
-      "run_id": "r6d269b7"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh1",
-      "horizon": "336",
-      "mse": 0.49394604563713074,
-      "mae": 0.4707977771759033,
-      "run_id": "rd98c437"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh1",
-      "horizon": "720",
-      "mse": 0.5126377940177917,
-      "mae": 0.5104051232337952,
-      "run_id": "r76b0cfc"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh1",
-      "horizon": "720",
-      "mse": 0.5126377940177917,
-      "mae": 0.5104051232337952,
-      "run_id": "rf6eda55"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh1",
-      "horizon": "720",
-      "mse": 0.5157109498977661,
-      "mae": 0.49333393573760986,
-      "run_id": "r59feb4a"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTm1",
-      "horizon": "720",
-      "mse": 0.5176766514778137,
-      "mae": 0.47468483448028564,
-      "run_id": "r8477592"
-    },
-    {
-      "model": "timesnet_lb96",
-      "dataset": "ETTh1",
-      "horizon": "720",
-      "mse": 0.5191843509674072,
-      "mae": 0.4951842427253723,
-      "run_id": "re7fcfdd"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm2",
-      "horizon": "720",
-      "mse": 0.5561041831970215,
-      "mae": 0.5234867334365845,
-      "run_id": "r2846a8f"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTm2",
-      "horizon": "720",
-      "mse": 0.5561041831970215,
-      "mae": 0.5234867334365845,
-      "run_id": "rc6ae24d"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh2",
-      "horizon": "336",
-      "mse": 0.59293133020401,
-      "mae": 0.5421714782714844,
-      "run_id": "r0ffe591"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh2",
-      "horizon": "336",
-      "mse": 0.59293133020401,
-      "mae": 0.5421714782714844,
-      "run_id": "r59a70d6"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh2",
-      "horizon": "720",
-      "mse": 0.8403232097625732,
-      "mae": 0.661099374294281,
-      "run_id": "ref4527e"
-    },
-    {
-      "model": "dlinear_lb96",
-      "dataset": "ETTh2",
-      "horizon": "720",
-      "mse": 0.8403232097625732,
-      "mae": 0.661099374294281,
-      "run_id": "r37a1290"
-    }
-  ],
-  "best": {
-    "model": "timesnet_lb96",
-    "dataset": "ETTm2",
-    "horizon": "96",
-    "mse": 0.18825967609882355,
-    "mae": 0.26780688762664795,
-    "run_id": "r1ca9a32"
-  }
+  "leaderboard": [],
+  "best": null
 }

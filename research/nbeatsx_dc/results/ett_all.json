@@ -1,0 +1,626 @@
+[
+  {
+    "dataset": "ETTh1",
+    "horizon": 96,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.107219,
+      "mae": 0.251121,
+      "n_samples": 3294,
+      "time_s": 1.03
+    },
+    "baseline_univariate": {
+      "mse": 0.104984,
+      "mae": 0.247612,
+      "n_samples": 3294,
+      "time_s": 0.16
+    },
+    "nbeatsx_dc": {
+      "mse": 0.110061,
+      "mae": 0.256672,
+      "n_samples": 3294,
+      "selected_vars": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 4,
+      "selection_ratio": 0.6666666666666666,
+      "time_s": 0.65
+    },
+    "delta_mse_vs_all": 0.002842,
+    "delta_pct_vs_all": 2.65
+  },
+  {
+    "dataset": "ETTh1",
+    "horizon": 192,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.130593,
+      "mae": 0.286197,
+      "n_samples": 3198,
+      "time_s": 0.67
+    },
+    "baseline_univariate": {
+      "mse": 0.124253,
+      "mae": 0.271067,
+      "n_samples": 3198,
+      "time_s": 0.16
+    },
+    "nbeatsx_dc": {
+      "mse": 0.136423,
+      "mae": 0.292498,
+      "n_samples": 3198,
+      "selected_vars": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 4,
+      "selection_ratio": 0.6666666666666666,
+      "time_s": 0.72
+    },
+    "delta_mse_vs_all": 0.00583,
+    "delta_pct_vs_all": 4.46
+  },
+  {
+    "dataset": "ETTh1",
+    "horizon": 336,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.16063,
+      "mae": 0.324276,
+      "n_samples": 3054,
+      "time_s": 6.15
+    },
+    "baseline_univariate": {
+      "mse": 0.124333,
+      "mae": 0.275008,
+      "n_samples": 3054,
+      "time_s": 0.21
+    },
+    "nbeatsx_dc": {
+      "mse": 0.157408,
+      "mae": 0.320424,
+      "n_samples": 3054,
+      "selected_vars": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 4,
+      "selection_ratio": 0.6666666666666666,
+      "time_s": 0.75
+    },
+    "delta_mse_vs_all": -0.003222,
+    "delta_pct_vs_all": -2.01
+  },
+  {
+    "dataset": "ETTh1",
+    "horizon": 720,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.179421,
+      "mae": 0.343476,
+      "n_samples": 2670,
+      "time_s": 1.04
+    },
+    "baseline_univariate": {
+      "mse": 0.138398,
+      "mae": 0.297707,
+      "n_samples": 2670,
+      "time_s": 0.31
+    },
+    "nbeatsx_dc": {
+      "mse": 0.182817,
+      "mae": 0.345688,
+      "n_samples": 2670,
+      "selected_vars": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 4,
+      "selection_ratio": 0.6666666666666666,
+      "time_s": 0.88
+    },
+    "delta_mse_vs_all": 0.003396,
+    "delta_pct_vs_all": 1.89
+  },
+  {
+    "dataset": "ETTh2",
+    "horizon": 96,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.253547,
+      "mae": 0.380123,
+      "n_samples": 3294,
+      "time_s": 0.61
+    },
+    "baseline_univariate": {
+      "mse": 0.259873,
+      "mae": 0.388399,
+      "n_samples": 3294,
+      "time_s": 0.16
+    },
+    "nbeatsx_dc": {
+      "mse": 0.253547,
+      "mae": 0.380123,
+      "n_samples": 3294,
+      "selected_vars": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 6,
+      "selection_ratio": 1.0,
+      "time_s": 0.7
+    },
+    "delta_mse_vs_all": 0.0,
+    "delta_pct_vs_all": 0.0
+  },
+  {
+    "dataset": "ETTh2",
+    "horizon": 192,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.292278,
+      "mae": 0.419508,
+      "n_samples": 3198,
+      "time_s": 0.54
+    },
+    "baseline_univariate": {
+      "mse": 0.305631,
+      "mae": 0.430573,
+      "n_samples": 3198,
+      "time_s": 0.19
+    },
+    "nbeatsx_dc": {
+      "mse": 0.292278,
+      "mae": 0.419508,
+      "n_samples": 3198,
+      "selected_vars": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 6,
+      "selection_ratio": 1.0,
+      "time_s": 0.78
+    },
+    "delta_mse_vs_all": 0.0,
+    "delta_pct_vs_all": 0.0
+  },
+  {
+    "dataset": "ETTh2",
+    "horizon": 336,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.308232,
+      "mae": 0.438408,
+      "n_samples": 3054,
+      "time_s": 0.62
+    },
+    "baseline_univariate": {
+      "mse": 0.326703,
+      "mae": 0.447322,
+      "n_samples": 3054,
+      "time_s": 0.17
+    },
+    "nbeatsx_dc": {
+      "mse": 0.308232,
+      "mae": 0.438408,
+      "n_samples": 3054,
+      "selected_vars": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 6,
+      "selection_ratio": 1.0,
+      "time_s": 0.77
+    },
+    "delta_mse_vs_all": 0.0,
+    "delta_pct_vs_all": 0.0
+  },
+  {
+    "dataset": "ETTh2",
+    "horizon": 720,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.351932,
+      "mae": 0.471367,
+      "n_samples": 2670,
+      "time_s": 1.1
+    },
+    "baseline_univariate": {
+      "mse": 0.408287,
+      "mae": 0.507952,
+      "n_samples": 2670,
+      "time_s": 0.49
+    },
+    "nbeatsx_dc": {
+      "mse": 0.351932,
+      "mae": 0.471367,
+      "n_samples": 2670,
+      "selected_vars": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 6,
+      "selection_ratio": 1.0,
+      "time_s": 2.2
+    },
+    "delta_mse_vs_all": 0.0,
+    "delta_pct_vs_all": 0.0
+  },
+  {
+    "dataset": "ETTm1",
+    "horizon": 96,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.050876,
+      "mae": 0.163824,
+      "n_samples": 13746,
+      "time_s": 487.7
+    },
+    "baseline_univariate": {
+      "mse": 0.045672,
+      "mae": 0.151762,
+      "n_samples": 13746,
+      "time_s": 0.98
+    },
+    "nbeatsx_dc": {
+      "mse": 0.047396,
+      "mae": 0.154645,
+      "n_samples": 13746,
+      "selected_vars": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 4,
+      "selection_ratio": 0.6666666666666666,
+      "time_s": 2.58
+    },
+    "delta_mse_vs_all": -0.00348,
+    "delta_pct_vs_all": -6.84
+  },
+  {
+    "dataset": "ETTm1",
+    "horizon": 192,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.079207,
+      "mae": 0.208545,
+      "n_samples": 13650,
+      "time_s": 2.0
+    },
+    "baseline_univariate": {
+      "mse": 0.074692,
+      "mae": 0.19971,
+      "n_samples": 13650,
+      "time_s": 0.66
+    },
+    "nbeatsx_dc": {
+      "mse": 0.076131,
+      "mae": 0.20167,
+      "n_samples": 13650,
+      "selected_vars": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 4,
+      "selection_ratio": 0.6666666666666666,
+      "time_s": 1.66
+    },
+    "delta_mse_vs_all": -0.003076,
+    "delta_pct_vs_all": -3.88
+  },
+  {
+    "dataset": "ETTm1",
+    "horizon": 336,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.110803,
+      "mae": 0.251098,
+      "n_samples": 13506,
+      "time_s": 2.64
+    },
+    "baseline_univariate": {
+      "mse": 0.109076,
+      "mae": 0.245901,
+      "n_samples": 13506,
+      "time_s": 0.82
+    },
+    "nbeatsx_dc": {
+      "mse": 0.10997,
+      "mae": 0.24751,
+      "n_samples": 13506,
+      "selected_vars": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 4,
+      "selection_ratio": 0.6666666666666666,
+      "time_s": 2.04
+    },
+    "delta_mse_vs_all": -0.000833,
+    "delta_pct_vs_all": -0.75
+  },
+  {
+    "dataset": "ETTm1",
+    "horizon": 720,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.139427,
+      "mae": 0.286639,
+      "n_samples": 13122,
+      "time_s": 3.53
+    },
+    "baseline_univariate": {
+      "mse": 0.14682,
+      "mae": 0.29317,
+      "n_samples": 13122,
+      "time_s": 1.26
+    },
+    "nbeatsx_dc": {
+      "mse": 0.144309,
+      "mae": 0.289778,
+      "n_samples": 13122,
+      "selected_vars": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 4,
+      "selection_ratio": 0.6666666666666666,
+      "time_s": 2.74
+    },
+    "delta_mse_vs_all": 0.004882,
+    "delta_pct_vs_all": 3.5
+  },
+  {
+    "dataset": "ETTm2",
+    "horizon": 96,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.118813,
+      "mae": 0.237313,
+      "n_samples": 13746,
+      "time_s": 2.03
+    },
+    "baseline_univariate": {
+      "mse": 0.11949,
+      "mae": 0.238393,
+      "n_samples": 13746,
+      "time_s": 0.57
+    },
+    "nbeatsx_dc": {
+      "mse": 0.118813,
+      "mae": 0.237313,
+      "n_samples": 13746,
+      "selected_vars": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 6,
+      "selection_ratio": 1.0,
+      "time_s": 1.9
+    },
+    "delta_mse_vs_all": 0.0,
+    "delta_pct_vs_all": 0.0
+  },
+  {
+    "dataset": "ETTm2",
+    "horizon": 192,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.185849,
+      "mae": 0.309441,
+      "n_samples": 13650,
+      "time_s": 1.66
+    },
+    "baseline_univariate": {
+      "mse": 0.184537,
+      "mae": 0.309546,
+      "n_samples": 13650,
+      "time_s": 0.72
+    },
+    "nbeatsx_dc": {
+      "mse": 0.185849,
+      "mae": 0.309441,
+      "n_samples": 13650,
+      "selected_vars": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 6,
+      "selection_ratio": 1.0,
+      "time_s": 2.67
+    },
+    "delta_mse_vs_all": 0.0,
+    "delta_pct_vs_all": 0.0
+  },
+  {
+    "dataset": "ETTm2",
+    "horizon": 336,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.259794,
+      "mae": 0.373676,
+      "n_samples": 13506,
+      "time_s": 2.05
+    },
+    "baseline_univariate": {
+      "mse": 0.262712,
+      "mae": 0.376347,
+      "n_samples": 13506,
+      "time_s": 1.4
+    },
+    "nbeatsx_dc": {
+      "mse": 0.259794,
+      "mae": 0.373676,
+      "n_samples": 13506,
+      "selected_vars": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 6,
+      "selection_ratio": 1.0,
+      "time_s": 3.41
+    },
+    "delta_mse_vs_all": 0.0,
+    "delta_pct_vs_all": 0.0
+  },
+  {
+    "dataset": "ETTm2",
+    "horizon": 720,
+    "lookback": 96,
+    "K1": 20,
+    "K2": 3,
+    "theta": 0.5,
+    "theta_mode": "percentile",
+    "community_method": "structural_entropy",
+    "baseline_all": {
+      "mse": 0.333345,
+      "mae": 0.439287,
+      "n_samples": 13122,
+      "time_s": 4.0
+    },
+    "baseline_univariate": {
+      "mse": 0.347537,
+      "mae": 0.448623,
+      "n_samples": 13122,
+      "time_s": 1.44
+    },
+    "nbeatsx_dc": {
+      "mse": 0.333345,
+      "mae": 0.439287,
+      "n_samples": 13122,
+      "selected_vars": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n_selected": 6,
+      "selection_ratio": 1.0,
+      "time_s": 3.61
+    },
+    "delta_mse_vs_all": 0.0,
+    "delta_pct_vs_all": 0.0
+  }
+]

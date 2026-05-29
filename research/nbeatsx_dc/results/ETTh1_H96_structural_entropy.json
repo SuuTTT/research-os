@@ -1,0 +1,38 @@
+{
+  "dataset": "ETTh1",
+  "horizon": 96,
+  "lookback": 96,
+  "K1": 20,
+  "K2": 3,
+  "theta": 0.5,
+  "theta_mode": "percentile",
+  "community_method": "structural_entropy",
+  "baseline_all": {
+    "mse": 0.107219,
+    "mae": 0.251121,
+    "n_samples": 3294,
+    "time_s": 0.82
+  },
+  "baseline_univariate": {
+    "mse": 0.104984,
+    "mae": 0.247612,
+    "n_samples": 3294,
+    "time_s": 0.15
+  },
+  "nbeatsx_dc": {
+    "mse": 0.110061,
+    "mae": 0.256672,
+    "n_samples": 3294,
+    "selected_vars": [
+      2,
+      4,
+      5,
+      6
+    ],
+    "n_selected": 4,
+    "selection_ratio": 0.6666666666666666,
+    "time_s": 0.94
+  },
+  "delta_mse_vs_all": 0.002842,
+  "delta_pct_vs_all": 2.65
+}
