@@ -38,5 +38,25 @@
         "event": "idea_created"
       }
     ]
+  },
+  {
+    "id": "ic3d14ae",
+    "project_id": "nbeatsx_dc",
+    "status": "new",
+    "priority": 1,
+    "title": "NBEATSx-DC: Community-Detection Feature Selection for Neural Time-Series Forecasting",
+    "hypothesis": "Spectral decomposition + mutual-information graph + community detection selects relevant exogenous variables before NBEATSx backbone, improving forecasting on datasets with physical redundancy (Jena climate) while degrading gracefully on uniform datasets (ETT).",
+    "metric": "MSE, MAE, feature-selection F1",
+    "created_at": "2026-05-29T04:10:31Z",
+    "updated_at": "2026-05-29T04:10:31Z",
+    "claimed_by": "",
+    "probe_specs": [],
+    "evidence": [],
+    "events": [
+      {
+        "at": "2026-05-29T04:10:31Z",
+        "event": "project_initialized"
+      }
+    ]
   }
 ]

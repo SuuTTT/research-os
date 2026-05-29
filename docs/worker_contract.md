@@ -91,15 +91,19 @@ Always follow this routing table before queuing or running any task:
 trains or evaluates a model. The local machine is a t3.small (2GB RAM, no GPU).
 Exceeding ~1.5GB working set triggers the OOM killer (exit code 137) with no warning.
 
-To run on the worker:
+To run on a worker (example using `vastai_worker_3`):
 ```bash
-SSH_WORKER="ssh -p 26249 root@ssh8.vast.ai -i ~/.ssh/vastai_id_ed25519"
+SSH_WORKER="ssh -p 22607 root@ssh4.vast.ai -i ~/.ssh/vastai_id_ed25519"
 
-# rsync project then run
+# rsync project then run (code-only sync, ~few MB, no cost warning needed)
 rsync -az --exclude '__pycache__' /home/ubuntu/my-project/ \
-  root@ssh8.vast.ai:/root/my-project/ -e "ssh -p 26249 -i ~/.ssh/vastai_id_ed25519"
-$SSH_WORKER "cd /root/my-project && python3 -u run_experiments.py"
+  root@ssh4.vast.ai:/root/my-project/ -e "ssh -p 22607 -i ~/.ssh/vastai_id_ed25519"
+$SSH_WORKER "cd /root/my-project && nohup python3 -u run_experiments.py > run.log 2>&1 &"
 ```
+
+**Before syncing datasets or checkpoints**: estimate transfer cost first.
+`vastai_worker_3` uplink is 35.2 Mbps / $0.10 per GB (estimated).
+A 5 GB dataset sync costs ~$0.50 — right at the warning threshold; confirm with user.
 
 ## Crash Contract
 
@@ -110,4 +114,45 @@ If a worker disappears:
 3. Requeue only if the task is retryable.
 4. Never count partial/stale tasks as final SOTA evidence unless the project
    manifest explicitly allows fixed-budget partial evaluation.
+
+## Rule: Do Not Disturb Running Workers
+
+If a worker already has a process running (visible via `pgrep`, `ps aux`, or
+`nvidia-smi`), **do not kill it, do not modify its environment, and do not
+install or upgrade packages** in the same Python/conda environment.
+
+- If you must install new dependencies, use a separate venv or a new worker.
+- Only attach to an existing run (e.g. `tail -f nohup.out`) to observe it.
+- If the run must be replaced (machine rented anew), destroy the instance first
+  and rent a fresh one; never recycle a working instance mid-run.
+
+## Rule: Air-Gapped / Restricted-Network Workers
+
+Some machines (e.g. hosted in China) have no access to PyPI, GitHub, Google,
+or HuggingFace. Before connecting or dispatching to any worker:
+
+1. **Check connectivity** at registration time: run
+   `curl -s --max-time 5 https://pypi.org` from the worker. If it times out,
+   mark the worker `network: restricted` in `workers.yaml`.
+
+2. **Package installation on restricted workers**:
+   - Prefer wheels pre-downloaded on the control plane and SCPed over.
+   - Use the closest accessible mirror (e.g. `https://pypi.tuna.tsinghua.edu.cn`
+     for Chinese nodes; set via `pip install --index-url <mirror>`).
+   - Document the mirror URL in the worker's `notes` field.
+
+3. **Bandwidth cost warning**: before any large `rsync` or `scp` transfer,
+   estimate the cost using the worker's `bandwidth_$/gb` field (from Vast.ai
+   listing or measured). **If the estimated transfer cost exceeds $0.50,
+   stop and report the estimate to the user before proceeding.**
+
+   Quick estimate formula:
+   ```
+   transfer_cost = data_gb × bandwidth_$/gb
+   # Vast.ai typical egress: $0.10–0.13/GB
+   # Example: 5 GB model checkpoint × $0.13 = $0.65 → WARN
+   ```
+
+4. For code syncs (typically < 50 MB), no warning needed. For datasets,
+   checkpoints, or Docker images, always estimate first.
 

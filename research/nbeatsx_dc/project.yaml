@@ -1,0 +1,111 @@
+project_id: "nbeatsx_dc"
+title: "NBEATSx-DC: Community-Detection Feature Selection for Neural Time-Series Forecasting"
+status: active
+idea: "Spectral decomposition + mutual-information graph + community detection selects relevant exogenous variables before NBEATSx backbone, improving forecasting on datasets with physical redundancy (Jena climate) while degrading gracefully on uniform datasets (ETT)."
+
+target:
+  claim: "DC-selected MSE < full-exogenous MSE on Jena (H=24,48,96,168) with F1 > 0.80 identifying relevant variables; dc MSE approximately equals full MSE on ETT (graceful degradation)."
+  primary_metric: "MSE (normalised)"
+  direction: lower
+  target_value: "dc_louvain MSE < baseline_full MSE on ≥3/4 Jena horizons"
+  confirmation_rule: >
+    After full multi-dataset neural run (50 epochs, 3 seeds, 4 horizons):
+    Jena dc_louvain MSE < baseline_full MSE on ≥3/4 horizons AND F1 > 0.80.
+    ETT dc_louvain MSE within 5% of baseline_full (graceful degradation).
+
+benchmarks:
+  datasets:
+    - jena_climate         # primary: known relevant/redundant structure
+    - uci_air_quality      # secondary: pollutant sensor structure
+    - ETTh1                # ablation: all vars uniform-correlated
+    - ETTh2
+    - ETTm1
+    - ETTm2
+  tasks:
+    - long_horizon_multivariate_forecasting
+  baselines:
+    - baseline_none   # univariate NBEATSx (no exog)
+    - baseline_full   # NBEATSx with all exogenous
+    - dc_louvain      # NBEATSx with DC-selected exogenous (Louvain)
+  official_repos:
+    - /home/ubuntu/nbeatsx-dc   # local — NOT yet on GitHub
+  reproduction_status: ridge_baselines_complete
+
+metrics:
+  primary:
+    - MSE (normalised)
+    - MAE (normalised)
+  secondary:
+    - feature_selection_F1
+    - feature_selection_precision
+    - feature_selection_recall
+    - delta_mse: (dc - full) / full * 100
+  parsers:
+    - /home/ubuntu/nbeatsx-dc/analyze_results.py
+
+environment:
+  docker_image: "pytorch/pytorch:2.7.1-cuda12.6-cudnn9-devel"
+  setup_script: "pip install PyEMD networkx python-louvain scikit-learn pandas numpy"
+  python: "3.12"
+  cuda: "12.6"
+
+# Hardware requirements for vast-hunt / add-worker
+hardware:
+  profile: pytorch              # use pytorch profile in vast_hunter.py
+  ref_hours: 4.5                # estimated hours on reference GPU
+  ref_dlp: 12.4                 # reference GPU DLPerf (RTX 3060 12GB)
+  data_gb: 0.5                  # data transferred per run (jena CSV + data)
+  disk_gb: 20                   # disk allocation in GB
+  min_vram_gb: 8
+  min_cuda: 11.8
+  min_reliability: 0.95
+  note: >
+    Model is tiny (~10MB params). Batch=512 with lookback=168 uses <100MB VRAM.
+    8GB VRAM is sufficient. RTX 3070 ID=32711685 ($0.072/hr, DLP=16.7) is the
+    best sub-$0.10/hr option found on 2026-05-29 (faster than ref RTX 3060).
+
+storage:
+  github_repo: ""               # not yet pushed
+  s3_prefix: ""
+  wandb_project: ""
+  hf_repo: ""
+
+publication:
+  paper_dir: "/home/ubuntu/nbeatsx-dc/paper"
+  target_venue: "NeurIPS Datasets & Benchmarks or ICML TS workshop"
+
+current_state:
+  summary: >
+    Architecture fixed (per-timestep z_enc + dropout). ETT Ridge baselines complete.
+    Jena neural run launched on vastai_worker_2 (nohup PID=1043808) but SSH is down.
+    Full multi-dataset neural run (jena+airq+ETTh1/h2, 50 epochs, 3 seeds) not yet run.
+    Paper skeleton complete with [FILL] placeholders waiting for final numbers.
+  next_action: >
+    1. Recover vastai_worker_2 SSH (check Vast.ai dashboard for new port).
+       Run: bash /home/ubuntu/nbeatsx-dc/scripts/recover_and_launch.sh <NEW_PORT>
+    2. Or rent RTX 3070 (ID=32711685, $0.072/hr):
+       python3 scripts/ros.py vast-hunt --project-id nbeatsx_dc --max-dph 0.10
+         --ref-hours 4.5 --ref-dlp 12.4 --data-gb 0.5 --rent
+    3. Run full multi-dataset experiment (3.3h on RTX 3070, ~$0.25 total).
+    4. Sync results back → run fill_paper_tables.py → write Discussion/Conclusion.
+  blockers:
+    - vastai_worker_2 SSH unreachable (Connection refused on ssh8.vast.ai:26249)
+    - Full Jena+AirQ neural results not yet collected
+
+
+storage:
+  github_repo: ""
+  s3_prefix: ""
+  wandb_project: ""
+  hf_repo: ""
+
+publication:
+  blog_dir: "research/nbeatsx_dc/blog"
+  paper_dir: "research/nbeatsx_dc/paper"
+  target_venue: ""
+
+current_state:
+  summary: ""
+  next_action: ""
+  blockers: []
+

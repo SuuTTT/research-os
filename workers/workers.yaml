@@ -72,3 +72,40 @@ workers:
       checkpoints: runs/checkpoints
     notes: "RTX 3060, instance 37906248, labeled aws, port may change on restart"
 
+  - worker_id: vastai_worker_3
+    kind: ssh
+    enabled: true
+    worker_pool: vastai
+    ssh:
+      host: ssh4.vast.ai
+      port: 22607
+      user: root
+      key: ~/.ssh/vastai_id_ed25519
+    workspace: /root/research-worker
+    runner:
+      type: bash
+      docker_image: ""
+    resources:
+      cpu: 20
+      gpu: 2
+      vram_gb: 12          # 2× GTX 1660 Super, 6 GB each
+      disk_gb: 120
+    network:
+      restricted: false
+      bandwidth_mbps_up: 35.2
+      bandwidth_mbps_down: 545.2
+      bandwidth_dollar_per_gb: 0.10  # estimate; verify on Vast.ai invoice
+    health:
+      heartbeat_command: "echo ok"
+      busy_command: "pgrep -f 'run_experiments\|nohup' 2>/dev/null || true"
+    artifact_paths:
+      logs: runs/logs
+      metrics: runs/metrics
+      checkpoints: runs/checkpoints
+    notes: >-
+      2x GTX 1660 Super (6 GB VRAM each, 7.2 TFLOPS total), instance 38342607,
+      host 113492, machine 56491. Max CUDA 13.1. 120 GB disk, 80 CPU available
+      (20 allocated). DLPerf 3.4 / 35.7 DLP/$/hr. $0.097/hr.
+      IP: 43.226.60.148. ACTIVE — do not kill or modify env if a process
+      is already running; attach with 'tail -f' only.
+

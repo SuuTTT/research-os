@@ -520,6 +520,196 @@ def _http_json(url: str, headers: dict[str, str], method: str = "GET", body: byt
         return False, 0, {}
 
 
+# ── project-status ───────────────────────────────────────────────────────────
+
+def cmd_project_status(_args):
+    """Print a dashboard of all projects and their current state."""
+    projects = sorted(RESEARCH.glob("*/project.yaml"))
+    if not projects:
+        print("No projects found in research/")
+        return
+
+    q_runs = read_json(QUEUES / "run_queue.json")
+    q_ideas = read_json(QUEUES / "idea_queue.json")
+
+    for yaml_path in projects:
+        try:
+            data = yaml.safe_load(yaml_path.read_text()) or {}
+        except Exception as e:
+            print(f"[{yaml_path.parent.name}] parse error: {e}")
+            continue
+
+        pid = data.get("project_id", yaml_path.parent.name)
+        status = data.get("status", "unknown")
+        title = data.get("title", "")
+        venue = (data.get("publication") or {}).get("target_venue", "")
+
+        runs_for = [r for r in q_runs if r.get("project_id") == pid]
+        run_counts = {}
+        for r in runs_for:
+            s = r.get("status", "unknown")
+            run_counts[s] = run_counts.get(s, 0) + 1
+
+        ideas_for = [i for i in q_ideas if i.get("project_id") == pid]
+        idea_counts = {}
+        for i in ideas_for:
+            s = i.get("status", "unknown")
+            idea_counts[s] = idea_counts.get(s, 0) + 1
+
+        current = data.get("current_state", {})
+        summary = (current.get("summary") or "").replace("\n", " ").strip()[:120]
+        next_action = (current.get("next_action") or "").replace("\n", " ").strip()[:100]
+        blockers = current.get("blockers") or []
+
+        print(f"{'─'*70}")
+        print(f"  {pid}  [{status}]")
+        print(f"  Title   : {title}")
+        if venue:
+            print(f"  Venue   : {venue}")
+        print(f"  Runs    : {run_counts or 'none queued'}")
+        print(f"  Ideas   : {idea_counts or 'none queued'}")
+        if summary:
+            print(f"  State   : {summary}")
+        if next_action:
+            print(f"  Next    : {next_action}")
+        if blockers:
+            for b in blockers if isinstance(blockers, list) else [blockers]:
+                print(f"  BLOCKER : {str(b).strip()[:100]}")
+    print(f"{'─'*70}")
+
+
+# ── add-worker ────────────────────────────────────────────────────────────────
+
+def cmd_add_worker(args):
+    """Register a new SSH worker (e.g. Vast.ai instance) in workers.yaml."""
+    workers_path = ROOT / "workers" / "workers.yaml"
+    data = yaml.safe_load(workers_path.read_text()) if workers_path.exists() else {"workers": []}
+    workers: list[dict] = data.get("workers", [])
+
+    if any(w["worker_id"] == args.worker_id for w in workers):
+        print(f"Worker {args.worker_id!r} already exists. Edit workers.yaml to update it.")
+        return
+
+    # If a Vast.ai instance ID is provided, look up SSH details automatically.
+    ssh_host = args.host
+    ssh_port = args.port
+    if args.vastai_instance_id and (not ssh_host or not ssh_port):
+        try:
+            out = subprocess.check_output(
+                ["vastai", "show", "instance", str(args.vastai_instance_id), "--raw"],
+                text=True, timeout=20,
+            )
+            inst = json.loads(out)
+            if isinstance(inst, list):
+                inst = inst[0]
+            ssh_host = ssh_host or inst.get("ssh_host") or inst.get("public_ipaddr")
+            ssh_port = ssh_port or inst.get("ssh_port") or 22
+            print(f"Looked up instance {args.vastai_instance_id}: {ssh_host}:{ssh_port}")
+        except Exception as e:
+            print(f"Warning: could not look up Vast.ai instance: {e}")
+
+    if not ssh_host or not ssh_port:
+        print("ERROR: provide --host and --port, or --vastai-instance-id")
+        return
+
+    worker: dict = {
+        "worker_id": args.worker_id,
+        "kind": "ssh",
+        "enabled": True,
+        "worker_pool": args.pool,
+        "workspace": args.workspace,
+        "ssh": {
+            "host": ssh_host,
+            "port": int(ssh_port),
+            "user": args.user,
+            "key": args.key,
+        },
+        "runner": {"type": "bash", "docker_image": ""},
+        "resources": {
+            "gpu": 1,
+            "vram_gb": args.vram_gb,
+            "disk_gb": args.disk_gb,
+        },
+        "health": {
+            "heartbeat_command": "echo ok",
+            "busy_command": "pgrep -af 'python|nohup' || true",
+        },
+        "artifact_paths": {
+            "logs": f"{args.workspace}/runs/logs",
+            "metrics": f"{args.workspace}/runs/metrics",
+            "checkpoints": f"{args.workspace}/runs/checkpoints",
+        },
+        "notes": args.notes or f"Added {now()}",
+    }
+    if args.vastai_instance_id:
+        worker["vastai_instance_id"] = str(args.vastai_instance_id)
+
+    workers.append(worker)
+    data["workers"] = workers
+    workers_path.write_text(yaml.dump(data, default_flow_style=False, sort_keys=False))
+    print(f"Added worker {args.worker_id!r} ({ssh_host}:{ssh_port}) to workers.yaml")
+    print(f"Run: python3 scripts/ros.py setup-worker --worker-id {args.worker_id}")
+
+
+# ── vast-hunt ─────────────────────────────────────────────────────────────────
+
+def cmd_vast_hunt(args):
+    """Wrapper around vast_hunter.py that can read project hardware requirements."""
+    hunter = Path(__file__).parent / "vast_hunter.py"
+    if not hunter.exists():
+        print("ERROR: scripts/vast_hunter.py not found")
+        return
+
+    cmd = ["python3", str(hunter)]
+
+    # Load project hardware requirements if --project-id given
+    if args.project_id:
+        pfile = project_dir(args.project_id) / "project.yaml"
+        if pfile.exists():
+            pdata = yaml.safe_load(pfile.read_text()) or {}
+            hw = pdata.get("hardware", {})
+            profile = hw.get("profile", "pytorch")
+            ref_hours = hw.get("ref_hours")
+            ref_dlp = hw.get("ref_dlp")
+            data_gb = hw.get("data_gb")
+            disk_gb = hw.get("disk_gb")
+            if profile and not args.profile:
+                cmd += ["--profile", profile]
+            if ref_hours and not args.ref_hours:
+                cmd += ["--ref-hours", str(ref_hours)]
+            if ref_dlp and not args.ref_dlp:
+                cmd += ["--ref-dlp", str(ref_dlp)]
+            if data_gb and not args.data_gb:
+                cmd += ["--data-gb", str(data_gb)]
+            if disk_gb and not args.disk_gb:
+                cmd += ["--disk-gb", str(disk_gb)]
+
+    if args.profile:
+        cmd += ["--profile", args.profile]
+    if args.max_dph is not None:
+        cmd += ["--max-dph", str(args.max_dph)]
+    if args.ref_hours is not None:
+        cmd += ["--ref-hours", str(args.ref_hours)]
+    if args.ref_dlp is not None:
+        cmd += ["--ref-dlp", str(args.ref_dlp)]
+    if args.data_gb is not None:
+        cmd += ["--data-gb", str(args.data_gb)]
+    if args.disk_gb is not None:
+        cmd += ["--disk-gb", str(args.disk_gb)]
+    if args.min_cuda is not None:
+        cmd += ["--min-cuda", str(args.min_cuda)]
+    if args.rent:
+        cmd += ["--rent"]
+        if args.image:
+            cmd += ["--image", args.image]
+        if args.onstart:
+            cmd += ["--onstart", args.onstart]
+    if args.extra:
+        cmd += args.extra
+
+    subprocess.run(cmd)
+
+
 def cmd_key_smoke(args):
     env_file = Path(args.env_file)
     loaded = _load_env_file(env_file)
@@ -667,6 +857,49 @@ def build_parser():
     s = sub.add_parser("key-smoke")
     s.add_argument("--env-file", default="/home/ubuntu/.env.local")
     s.set_defaults(func=cmd_key_smoke)
+
+    s = sub.add_parser("project-status",
+                       help="Dashboard of all projects, run counts, and current state.")
+    s.set_defaults(func=cmd_project_status)
+
+    s = sub.add_parser("add-worker",
+                       help="Register a new SSH worker (Vast.ai or any SSH machine).")
+    s.add_argument("--worker-id", required=True, help="Unique name for this worker")
+    s.add_argument("--vastai-instance-id", type=int, default=None,
+                   help="Vast.ai instance ID — auto-fills --host and --port")
+    s.add_argument("--host", default=None)
+    s.add_argument("--port", type=int, default=None)
+    s.add_argument("--user", default="root")
+    s.add_argument("--key", default="~/.ssh/vastai_id_ed25519")
+    s.add_argument("--pool", default="vastai")
+    s.add_argument("--workspace", default="/root/research-worker")
+    s.add_argument("--vram-gb", type=float, default=0.0)
+    s.add_argument("--disk-gb", type=float, default=0.0)
+    s.add_argument("--notes", default="")
+    s.set_defaults(func=cmd_add_worker)
+
+    s = sub.add_parser("vast-hunt",
+                       help="Find GPU offers and estimate total cost. Reads hardware "
+                            "requirements from project.yaml when --project-id is given.")
+    s.add_argument("--project-id", default=None,
+                   help="Load hardware profile from project.yaml hardware: section")
+    s.add_argument("--profile", default=None, choices=["jax", "pytorch"],
+                   help="Override hardware profile (jax or pytorch)")
+    s.add_argument("--max-dph", type=float, default=None)
+    s.add_argument("--ref-hours", type=float, default=None,
+                   help="Reference experiment wall-clock hours (enables cost table)")
+    s.add_argument("--ref-dlp", type=float, default=None,
+                   help="DLPerf of reference GPU (e.g. 12.4 for RTX 3060)")
+    s.add_argument("--data-gb", type=float, default=None)
+    s.add_argument("--disk-gb", type=float, default=None)
+    s.add_argument("--min-cuda", type=float, default=None)
+    s.add_argument("--rent", action="store_true",
+                   help="Print `vastai create instance` command for best result")
+    s.add_argument("--image", default="")
+    s.add_argument("--onstart", default="")
+    s.add_argument("extra", nargs=argparse.REMAINDER,
+                   help="Extra flags forwarded verbatim to vast_hunter.py")
+    s.set_defaults(func=cmd_vast_hunt)
 
     return p
 
