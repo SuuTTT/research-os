@@ -90,6 +90,7 @@ workers:
       gpu: 2
       vram_gb: 12          # 2× GTX 1660 Super, 6 GB each
       disk_gb: 120
+      reliability_pct: 90
     network:
       restricted: false
       bandwidth_mbps_up: 35.2
@@ -106,6 +107,46 @@ workers:
       2x GTX 1660 Super (6 GB VRAM each, 7.2 TFLOPS total), instance 38342607,
       host 113492, machine 56491. Max CUDA 13.1. 120 GB disk, 80 CPU available
       (20 allocated). DLPerf 3.4 / 35.7 DLP/$/hr. $0.097/hr.
-      IP: 43.226.60.148. ACTIVE — do not kill or modify env if a process
-      is already running; attach with 'tail -f' only.
+      IP: 43.226.60.148. ACTIVE — back online 2025-05-29, port confirmed 22607.
+      reliability_pct: 90 — use tmux for all long jobs.
+      Multi-GPU: CUDA_VISIBLE_DEVICES=0/1 for parallel independent jobs.
+      Workspace for nbeatsx-dc: /root/nbeatsx-dc
+      venv: /root/nbeatsx_venv (do not touch system python or /root/venv).
+
+  - worker_id: vastai_worker_4
+    kind: ssh
+    enabled: true
+    worker_pool: vastai
+    ssh:
+      host: ssh5.vast.ai
+      port: 27233
+      user: root
+      key: ~/.ssh/vastai_id_ed25519
+    workspace: /root/nbeatsx-dc
+    runner:
+      type: bash
+      docker_image: ""
+    resources:
+      cpu: 8
+      gpu: 1
+      vram_gb: 12          # RTX 3060, 12 GB
+      disk_gb: 20
+    network:
+      restricted: false
+      bandwidth_mbps_up: 751.3
+      bandwidth_mbps_down: 1074.3
+      bandwidth_dollar_per_gb: 0.10
+    health:
+      heartbeat_command: "echo ok"
+      busy_command: "pgrep -f 'run_nbeats_multi\\|nohup' 2>/dev/null || true"
+    artifact_paths:
+      logs: /root/nbeatsx-dc/results/multi
+      metrics: /root/nbeatsx-dc/results/multi
+      checkpoints: /root/nbeatsx-dc/results
+    notes: >-
+      RTX 3060 12GB VRAM, instance 37907233, host 112617, ssh5.vast.ai:27233.
+      CUDA 13.0 driver. $0.061/hr. Pre-existing env: /root/venv (numpy/pandas/scipy).
+      NBEATSx venv: /root/nbeatsx_venv. Code: /root/nbeatsx-dc/.
+      Other research present (helios-rl, mujoco_playground_repo) — do not
+      touch /root/venv or other project dirs. GPU idle as of 2026-05-29.
 
